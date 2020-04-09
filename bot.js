@@ -183,7 +183,7 @@ client.on("guildMemberAdd", async (member) => {
     .setAuthor(client.user.username,client.user.displayAvatarURL)
     .setDescription(`${emoji1} <@${member.user.id}>**, Aramıza Hoşgeldin :)**
 
-    ${emoji2} **Seninle Beraber ⌘*${member.guild.memberCount}*⌘ Kişiyiz.**
+    ${emoji2} **Seninle Beraber ♅*${member.guild.memberCount}*♅ Kişiyiz.**
     ${emoji2} **Teyit Olabilmeniz İçin Lütfen ~*"ᴄᴏɴғɪʀᴍᴀᴛɪᴏɴ"*~ Odalarına Giriş Yapınız.!**
     ${emoji2} **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
     ${guvenli} **Güvenli Hesap!**
