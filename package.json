@@ -75,7 +75,7 @@
     "passport-strategy": "^1.0.0",
     "path": "^0.12.7",
     "pokedex-api": "^1.1.2",
-    "quick.db": "^7.0.0-b22",
+    "quick.db": "^7.0.0-b22",    
     "random-puppy": "^1.1.0",
     "randomstring": "^1.1.5",
     "request": "^2.88.0",
