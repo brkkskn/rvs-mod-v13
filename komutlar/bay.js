@@ -35,6 +35,13 @@ exports.run = async(client, message, args, ops) => {
     let teyit = await db.add(`teyit.${message.guild.id}.${message.author.id}`, 1);
     let teyiterkek = await db.add(`teyite.${message.guild.id}.${message.author.id}`, 1);
   
+  
+  let teyit = await db.fetch(`teyit.${message.guild.id}.${message.author.id}`);  
+  let teyiterkek = await db.fetch(`teyite.${message.guild.id}.${message.author.id}`);  
+  let teyitkiz = await db.fetch(`teyitk.${message.guild.id}.${message.author.id}`);  
+  
+    message.channel.send(`<@${message.author.id}> Başarıyla Teyit Ettin. Teyit Edilen Kişi ${vUser}. Teyit Sayınız: ${teyit ? teyit : 'Hiç Teyit Etmemiş.'}`);
+  
     const emoji1 = client.emojis.get('693976996321165385');
     const emoji2 = client.emojis.get('693987889549410396');
     const emoji3 = client.emojis.get('693972316182282271');
