@@ -25,7 +25,7 @@ exports.run = async(client, message, args, ops) => {
         .addField("Kanal", message.channel, true)
         .addField("Teyit Olan Kişi", `${vUser}`, true)
         .addField("Teyit Cinsiyeti", "Erkek", true)
-        .addField("Teyit Sayısı", `${teyitsayisi}`, true)
+        .addField("Teyit Sayısı", `${teyitsayisi || 0}`, true)
         .addField("Saudade Mudita", "Gururla Sunar...!", true)
         .setTimestamp();
       let veriflog = message.guild.channels.find(`name`, "🔺ᴋᴀʏıᴛʟᴀʀ");
