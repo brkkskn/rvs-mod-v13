@@ -146,7 +146,7 @@ client.on("guildMemberAdd", async (member) => {
     const emoji1 = client.emojis.get('693976996321165385');
     const emoji2 = client.emojis.get('693987889549410396');
     const emoji3 = client.emojis.get('693972316182282271');
-    const guvenli = client.emojis.get('694002916104601630');
+    const guvenli = client.emojis.get('700042383315697794');
     const supheli = client.emojis.get('694002919766229094');  
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
@@ -176,14 +176,14 @@ client.on("guildMemberAdd", async (member) => {
     const emoji1 = client.emojis.get('693976996321165385');
     const emoji2 = client.emojis.get('693987889549410396');
     const emoji3 = client.emojis.get('693972316182282271');
-    const guvenli = client.emojis.get('694002916104601630');
+    const guvenli = client.emojis.get('699201024325320706');
     const supheli = client.emojis.get('694002919766229094');
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
     .setAuthor(client.user.username,client.user.displayAvatarURL)
     .setDescription(`${emoji1} <@${member.user.id}>**, Aramıza Hoşgeldin :)**
 
-    ${emoji2} **Seninle Beraber ♅*${member.guild.memberCount}*♅ Kişiyiz.**
+    ${emoji2} **Seninle Beraber *${member.guild.memberCount}*  ~Kişiyiz.**
     ${emoji2} **Teyit Olabilmeniz İçin Lütfen ~*"ᴄᴏɴғɪʀᴍᴀᴛɪᴏɴ"*~ Odalarına Giriş Yapınız.!**
     ${emoji2} **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
     ${guvenli} **Güvenli Hesap!**
