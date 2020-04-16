@@ -202,3 +202,11 @@ client.on("guildMemberAdd", async (member) => {
 
 
 // OTOROL \\
+
+// BOT OFFLINE KONTROL \\
+client.on("ready", async () => {
+  setInterval(() => {
+  client.channels.get("700351796706803762").send(`[TEYİT] Bot Durumu: Online`)
+}, 300000)//milsaniye
+})
+// BOT OFFLINE KONTROL \\
