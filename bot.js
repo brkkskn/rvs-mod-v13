@@ -103,46 +103,15 @@ client.on('error', e => {
 
 client.login(ayarlar.token);
 
-// OTOROL \\
-client.on("guildMemberAdd", async member => {
-        let sayac = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
-  let otorole =  JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
-      let arole = otorole[member.guild.id].sayi
-  let giriscikis = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));  
-  let embed = new Discord.RichEmbed()
-    .setTitle('Otorol Sistemi')
-    .setDescription(`:loudspeaker: :inbox_tray:  @${member.user.tag}'a Otorol Verildi `)
-.setColor("GREEN")
-    .setFooter("Gnarge", client.user.avatarURL);
-
-  if (!giriscikis[member.guild.id].kanal) {
-    return;
-  }
-
-  try {
-    let giriscikiskanalID = giriscikis[member.guild.id].kanal;
-    let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
-      } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
-    return console.log(e)
-  }
-
-});
+// TEYIT \\
 
 client.on("guildMemberAdd", async (member) => {
       let gkisi = client.users.get(member.id);
       const ktarih = new Date().getTime() - gkisi.createdAt.getTime();   
-      let autorole =  JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
-      let role = autorole[member.guild.id].sayi
-      let giriscikis = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));  
-
 
     if (ktarih < 2592000001) {
-      member.removeRole("693293177838501969", 300),   
-      member.addRole("693337505294188554")
-    
-        let giriscikiskanalID = giriscikis[member.guild.id].kanal;
-    let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
-    
+      member.addRole("SUPHELI HESAP ID")
+        
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
     .setAuthor(client.user.username,client.user.displayAvatarURL)
@@ -159,41 +128,32 @@ client.on("guildMemberAdd", async (member) => {
     
     .setTimestamp()
     .setFooter(`ŞÜPHELİ HESAPLAR YETKİLİ İLE İLETİŞİME GEÇSİNLER.!`)
-    
-    giriscikiskanali.send(embed)
+        
+    let mkanal = member.guild.channels.find(`name`, "MISAFIR KANAL ADI");
+    mkanal.send(embed);
     
     }else{
-              member.addRole(role)
-      
-          let giriscikiskanalID = giriscikis[member.guild.id].kanal;
-    let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
-    
-    const emoji1 = client.emojis.get('693976996321165385');
-    const emoji2 = client.emojis.get('693987889549410396');
-    const emoji3 = client.emojis.get('693972316182282271');
-    const guvenli = client.emojis.get('699201024325320706');
-    const supheli = client.emojis.get('694002919766229094');
+              member.addRole("GUVENLI HESAP ID")
+          
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
     .setAuthor(client.user.username,client.user.displayAvatarURL)
-    .setDescription(`${emoji1} <@${member.user.id}>**, Aramıza Hoşgeldin :)**
+    .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin :)**
 
-    ${emoji2} **Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
-    ${emoji2} **Teyit Olabilmeniz İçin Lütfen ~*"ᴄᴏɴғɪʀᴍᴀᴛɪᴏɴ"*~ Odalarına Giriş Yapınız.!**
-    ${emoji2} **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
-    ${guvenli} **Güvenli Hesap!**
+    **Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
+     **Teyit Olabilmeniz İçin Lütfen ~*"ᴄᴏɴғɪʀᴍᴀᴛɪᴏɴ"*~ Odalarına Giriş Yapınız.!**
+     **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
+     **Güvenli Hesap!**
 
-    ${emoji3} **Teyitçi Sorumlularımız Sizlerle İlgilenecektirler.**
+    **Teyitçi Sorumlularımız Sizlerle İlgilenecektirler.**
 
 `,true)
     
     .setTimestamp()
     .setFooter(`ŞÜPHELİ HESAPLAR YETKİLİ İLE İLETİŞİME GEÇSİNLER.!`)
     
-    giriscikiskanali.send(embed)
-
       }
 });
 
 
-// OTOROL \\
+// TEYIT \\

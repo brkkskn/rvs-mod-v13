@@ -3,8 +3,8 @@ const db = require('quick.db');
 
 exports.run = async(client, message, args, ops) => {
     message.delete()
-    if (!message.member.roles.find("name", "Teyitçi")) {
-        return message.channel.send(' **Bu Komutu Kullanmak için** \*`Teyitçi*\` **Rolüne Sahip Olman Lazım** ')
+    if (!message.member.roles.find("name", "TEYITCI")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** \*`TEYITCI*\` **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     }  
     let toverify = message.guild.member(message.mentions.users.first());
@@ -12,8 +12,8 @@ exports.run = async(client, message, args, ops) => {
     let verifyrolee = message.guild.roles.find(`name`, "Misafir");
     if(toverify.roles.find(`name`, "Erkek")) return message.channel.send('Teyit Başarısız, Kullanıcı Zaten Kayıtlı.')
     if(toverify.roles.find(`name`, "Kız")) return message.channel.send('Teyit Başarısız, Kullanıcı Zaten Kayıtlı.')
-    if (!verifyrole) return message.reply("Rol Bulunamadı Lütfen 'Lianslı' Adıyla Rol Oluşturunuz.");
-    if (!verifyrolee) return message.reply("Rol Bulunamadı Lütfen 'Lianslı' Adıyla Rol Oluşturunuz.");
+    if (!verifyrole) return message.reply("Rol Bulunamadı Lütfen 'Kız' Adıyla Rol Oluşturunuz.");
+    if (!verifyrolee) return message.reply("Rol Bulunamadı Lütfen 'Misafir' Adıyla Rol Oluşturunuz.");
     if (!toverify) return message.reply("Bir kullanıcıdan bahsetmelisin.");
     await (toverify.addRole(verifyrole.id),toverify.removeRole(verifyrolee.id));
     let vUser = message.guild.member(message.mentions.users.first());
@@ -28,8 +28,8 @@ exports.run = async(client, message, args, ops) => {
         .addField("Teyit Sayısı", `${teyitsayisi}`, true)
         .addField("Saudade Mudita", "Gururla Sunar...!", true)
         .setTimestamp();
-    let veriflog = message.guild.channels.find(`name`, "🔺ᴋᴀʏıᴛʟᴀʀ");
-    if (!veriflog) return message.channel.send("Doğrulama Kullanıcı Log Kanalı bulunamadı. Lütfen '🔺ᴋᴀʏıᴛʟᴀʀ' Adlı Kanal Oluşturunuz.`");
+    let veriflog = message.guild.channels.find(`name`, "KAYIT LOG ADI");
+    if (!veriflog) return message.channel.send("Doğrulama Kullanıcı Log Kanalı bulunamadı. Lütfen 'KAYIT LOG ADI' Adlı Kanal Oluşturunuz.`");
     veriflog.send(verifembed);
     
     let teyit = await db.add(`teyit.${message.guild.id}.${message.author.id}`, 1);
@@ -51,7 +51,7 @@ exports.run = async(client, message, args, ops) => {
     .setTimestamp()
     .setFooter(`KURALLARA UYMAYI UNUTMAYINIZ.!`)
     
-    let onay = message.guild.channels.find(`name`, "💬sᴏʜʙᴇᴛ");
+    let onay = message.guild.channels.find(`name`, "GENEL SOHBET KANAL ADI");
     onay.send(embed).then(m => m.delete(60000));
 }
 exports.conf = {
