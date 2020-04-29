@@ -152,6 +152,9 @@ client.on("guildMemberAdd", async (member) => {
     .setTimestamp()
     .setFooter(`ŞÜPHELİ HESAPLAR YETKİLİ İLE İLETİŞİME GEÇSİNLER.!`)
     
+    let mkanal = member.guild.channels.find(`name`, "MISAFIR KANAL ADI");
+    mkanal.send(embed);
+      
       }
 });
 
