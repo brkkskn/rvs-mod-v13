@@ -3,15 +3,15 @@ const db = require('quick.db');
 
 exports.run = async(client, message, args, ops) => {
     message.delete()
-    if (!message.member.roles.find("name", "ᕒ ᴛᴇʏɪᴛ ᓬ")) {
-        return message.channel.send(' **Bu Komutu Kullanmak için** \*`ᕒ ᴛᴇʏɪᴛ ᓬ*\` **Rolüne Sahip Olman Lazım** ')
+    if (!message.member.roles.find("name", "Teyitçi")) {
+        return message.channel.send(' **Bu Komutu Kullanmak için** \*`Teyitçi*\` **Rolüne Sahip Olman Lazım** ')
             .then(m => m.delete(5000));
     }  
     let toverify = message.guild.member(message.mentions.users.first());
-    let verifyrole = message.guild.roles.find(`name`, "ʙᴀʏᴀɴ ᴍᴜᴅɪᴛᴀ");
-    let verifyrolee = message.guild.roles.find(`name`, "ᴍɪsᴀғɪʀ");
-    if(toverify.roles.find(`name`, "ʙᴀʏ ᴍᴜᴅɪᴛᴀ")) return message.channel.send('Teyit Başarısız, Kullanıcı Zaten Kayıtlı.')
-    if(toverify.roles.find(`name`, "ʙᴀʏᴀɴ ᴍᴜᴅɪᴛᴀ")) return message.channel.send('Teyit Başarısız, Kullanıcı Zaten Kayıtlı.')
+    let verifyrole = message.guild.roles.find(`name`, "Kız");
+    let verifyrolee = message.guild.roles.find(`name`, "Misafir");
+    if(toverify.roles.find(`name`, "Erkek")) return message.channel.send('Teyit Başarısız, Kullanıcı Zaten Kayıtlı.')
+    if(toverify.roles.find(`name`, "Kız")) return message.channel.send('Teyit Başarısız, Kullanıcı Zaten Kayıtlı.')
     if (!verifyrole) return message.reply("Rol Bulunamadı Lütfen 'Lianslı' Adıyla Rol Oluşturunuz.");
     if (!verifyrolee) return message.reply("Rol Bulunamadı Lütfen 'Lianslı' Adıyla Rol Oluşturunuz.");
     if (!toverify) return message.reply("Bir kullanıcıdan bahsetmelisin.");
@@ -39,18 +39,15 @@ exports.run = async(client, message, args, ops) => {
   
     message.channel.send(`<@${message.author.id}> Başarıyla Teyit Ettin. Teyit Edilen Kişi ${vUser}. Teyit Sayınız: ${teyitt ? teyitt : 'Hiç Teyit Etmemiş.'}`);
   
-    const emoji1 = client.emojis.get('693976996321165385');
-    const emoji2 = client.emojis.get('693987889549410396');
-    const emoji3 = client.emojis.get('693972316182282271');
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
     .setAuthor(client.user.username,client.user.displayAvatarURL)
-    .setDescription(`${emoji1} ${vUser}, Aramıza Hoşgeldin :)
+    .setDescription(`${vUser}, Aramıza Hoşgeldin :)
         
-    ${emoji2}Seninle Beraber **${message.guild.memberCount}** kişiyiz.
-    ${emoji2}Cinsiyet: **KIZ**
+    Seninle Beraber **${message.guild.memberCount}** kişiyiz.
+    Cinsiyet: **KIZ**
 
-    ${emoji3}Şu Kanallara Göz Atmayı Unutma <#693286362778173492> **-** <#693286383728459838>`,true)
+    Şu Kanallara Göz Atmayı Unutma <#693286362778173492> **-** <#693286383728459838>`,true)
     .setTimestamp()
     .setFooter(`KURALLARA UYMAYI UNUTMAYINIZ.!`)
     

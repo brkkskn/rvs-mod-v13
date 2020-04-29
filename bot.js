@@ -143,22 +143,17 @@ client.on("guildMemberAdd", async (member) => {
         let giriscikiskanalID = giriscikis[member.guild.id].kanal;
     let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
     
-    const emoji1 = client.emojis.get('693976996321165385');
-    const emoji2 = client.emojis.get('693987889549410396');
-    const emoji3 = client.emojis.get('693972316182282271');
-    const guvenli = client.emojis.get('700042383315697794');
-    const supheli = client.emojis.get('694002919766229094');  
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
     .setAuthor(client.user.username,client.user.displayAvatarURL)
-    .setDescription(`${emoji1} <@${member.user.id}>**, Aramıza Hoşgeldin :)**
+    .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin :)**
 
-    ${emoji2} **Seninle Beraber ~*${member.guild.memberCount}*~ Kişiyiz.**
-    ${emoji2} **Teyit Olabilmeniz İçin Lütfen ~*"ᴄᴏɴғɪʀᴍᴀᴛɪᴏɴ"*~ Odalarına Giriş Yapınız.!**
-    ${emoji2} **Kayıt Tarihi: ${moment.utc(member.JoinedAt).format('DD.MM.YY')}**
-    ${supheli} **Şüpheli Hesap!**
+     **Seninle Beraber ~*${member.guild.memberCount}*~ Kişiyiz.**
+     **Teyit Olabilmeniz İçin Lütfen ~*"ᴄᴏɴғɪʀᴍᴀᴛɪᴏɴ"*~ Odalarına Giriş Yapınız.!**
+     **Kayıt Tarihi: ${moment.utc(member.JoinedAt).format('DD.MM.YY')}**
+     **Şüpheli Hesap!**
 
-    ${emoji3} **ᕒ ᴛᴇʏɪᴛ ᓬ Sorumlularımız Sizlerle İlgilenecektirler.**
+    **ᕒ ᴛᴇʏɪᴛ ᓬ Sorumlularımız Sizlerle İlgilenecektirler.**
 
 `,true)
     
@@ -188,7 +183,7 @@ client.on("guildMemberAdd", async (member) => {
     ${emoji2} **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
     ${guvenli} **Güvenli Hesap!**
 
-    ${emoji3} **ᕒ ᴛᴇʏɪᴛ ᓬ Sorumlularımız Sizlerle İlgilenecektirler.**
+    ${emoji3} **Teyitçi Sorumlularımız Sizlerle İlgilenecektirler.**
 
 `,true)
     
@@ -202,11 +197,3 @@ client.on("guildMemberAdd", async (member) => {
 
 
 // OTOROL \\
-
-// BOT OFFLINE KONTROL \\
-client.on("ready", async () => {
-  setInterval(() => {
-  client.channels.get("700351796706803762").send(`[TEYİT] Bot Durumu: Online`)
-}, 300000)//milsaniye
-})
-// BOT OFFLINE KONTROL \\
