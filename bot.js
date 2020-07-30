@@ -103,60 +103,58 @@ client.on('error', e => {
 
 client.login(ayarlar.token);
 
-// TEYIT \\
 
+// TEYIT \\
+  const verify = client.emojis.get (`734972496926867518`)
 client.on("guildMemberAdd", async (member) => {
       let gkisi = client.users.get(member.id);
       const ktarih = new Date().getTime() - gkisi.createdAt.getTime();   
 
     if (ktarih < 2592000001) {
-      member.addRole("SUPHELI HESAP ID")
+      member.addRole("1241414131314141")
         
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
     .setAuthor(client.user.username,client.user.displayAvatarURL)
-    .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin :)**
+    .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin.**
 
      **Seninle Beraber ~*${member.guild.memberCount}*~ Kişiyiz.**
-     **Teyit Olabilmeniz İçin Lütfen ~*"ᴄᴏɴғɪʀᴍᴀᴛɪᴏɴ"*~ Odalarına Giriş Yapınız.!**
+     **Teyit Olabilmeniz İçin Örnek = '!kayıt Burak 24' Yazınız.!**
      **Kayıt Tarihi: ${moment.utc(member.JoinedAt).format('DD.MM.YY')}**
      **Şüpheli Hesap!**
 
-    **ᕒ ᴛᴇʏɪᴛ ᓬ Sorumlularımız Sizlerle İlgilenecektirler.**
+     **Bol keyifli zaman geçirmeniz dileğiyle - Trigger.**
 
 `,true)
     
     .setTimestamp()
-    .setFooter(`ŞÜPHELİ HESAPLAR YETKİLİ İLE İLETİŞİME GEÇSİNLER.!`)
+    .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
         
-    let mkanal = member.guild.channels.find(`name`, "MISAFIR KANAL ADI");
+    let mkanal = member.guild.channels.find(`name`, "log-confirm");
     mkanal.send(embed);
     
     }else{
-              member.addRole("GUVENLI HESAP ID")
+              member.addRole("0464564564564564")
           
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
     .setAuthor(client.user.username,client.user.displayAvatarURL)
-    .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin :)**
+    .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin.**
 
     **Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
-     **Teyit Olabilmeniz İçin Lütfen ~*"ᴄᴏɴғɪʀᴍᴀᴛɪᴏɴ"*~ Odalarına Giriş Yapınız.!**
+     **Teyit Olabilmeniz İçin Örnek = '!kayıt Burak 24' Yazınız.!**
      **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
      **Güvenli Hesap!**
 
-    **Teyitçi Sorumlularımız Sizlerle İlgilenecektirler.**
+    **Bol keyifli zaman geçirmeniz dileğiyle - Trigger.**
 
 `,true)
     
     .setTimestamp()
-    .setFooter(`ŞÜPHELİ HESAPLAR YETKİLİ İLE İLETİŞİME GEÇSİNLER.!`)
+    .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
     
-    let mkanal = member.guild.channels.find(`name`, "MISAFIR KANAL ADI");
+    let mkanal = member.guild.channels.find(`name`, "log-confirm");
     mkanal.send(embed);
       
       }
 });
-
-
-// TEYIT \\
