@@ -105,7 +105,7 @@ client.login(ayarlar.token);
 
 
 // TEYIT \\
-  const verify = client.emojis.get (`734972496926867518`)
+
 client.on("guildMemberAdd", async (member) => {
       let gkisi = client.users.get(member.id);
       const ktarih = new Date().getTime() - gkisi.createdAt.getTime();   
@@ -135,18 +135,19 @@ client.on("guildMemberAdd", async (member) => {
     
     }else{
               member.addRole("0464564564564564")
-    const verify = client.emojis.get (`735122426878230539`)         
+    const arrow = client.emojis.get (`740174062747123762`) 
+    const verify = client.emojis.get (`735122426878230539`)
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
     .setAuthor(client.user.username,client.user.displayAvatarURL)
     .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin.**
 
-     ${verify}**Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
-     **Teyit Olabilmeniz İçin Örnek = '!kayıt Burak 24' Yazınız.!**
-     **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
-     **Güvenli Hesap!**
+     ${arrow}**Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
+     ${arrow}**Teyit Olabilmeniz İçin Örnek = '!kayıt Burak 24' Yazınız.!**
+     ${arrow}**Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
+     ${arrow}**Güvenli Hesap!**
 
-    **Bol keyifli zaman geçirmeniz dileğiyle - Trigger.**
+    ${verify} **Bol keyifli zaman geçirmeniz dileğiyle - Trigger.**
 
 `,true)
     
