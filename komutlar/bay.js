@@ -2,15 +2,14 @@ const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
 
-let kayityetkili = '703477577754345514' //KAYIT YETKİLİSİ ID
-let verbuse = '703446279275020338' //VERİLECEK ROL ID
-let verbusem = '703446279275020338' //VERİLECEK ROL ID
+let kayityetkili = '740959861520597073' //KAYIT YETKİLİSİ ID
+let verbuse = '740959863311564892' //VERİLECEK ROL ID
+let verbusem = '740959864401952861' //VERİLECEK ROL ID
 let albuse = '703451025939497030' //ALINACAK ROL ID
-let albusem = '703451025939497030' //ALINACAK ROL ID l Kullanmicaksanız silin
-let isimön = '✝' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
-let yas = args[1] 
+//let albusem = '703451025939497030' //ALINACAK ROL ID l Kullanmicaksanız silin
+let isimön = 'そ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+//let yas = args[1] 
 
-if (!yas) return message.channel.send(`**Yaşını girmelisin!**`)
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
 
   if(!message.member.roles.has(kayityetkili)) 
@@ -18,11 +17,11 @@ if (!yas) return message.channel.send(`**Yaşını girmelisin!**`)
   return message.channel.send(`Bu komutu kullanabilmek için \`Kayıt\` yetkisine sahip olmasınız.`);
   let member = message.mentions.members.first()
   let isim = args.slice(1).join(" ")
-  if (!member) return message.channel.send('Bir Üye Etiketlemelisin💖')
-  if (!isim) return message.channel.send('Bir İsim Yazmalısın 💖')
+  if (!member) return message.channel.send('**!erkek @kullanıcıadı <isim> şeklinde olmalı!**')
+  if (!isim) return message.channel.send('**Bir isim yazmalısın.')
 
   setTimeout(function(){
-  member.setNickname(`${isimön}${isim}${yas}`)
+  member.setNickname(`${isimön}${isim}`)
   },2000)
   setTimeout(function(){
   member.addRole(verbuse)
@@ -38,7 +37,7 @@ if (!yas) return message.channel.send(`**Yaşını girmelisin!**`)
   .setColor('RANDOM')
   .setDescription(`✅ Kayıt işlemi Başarılı ✅
 
-**Kayıt edilen kullanıcı :** ${isimön}${isim}${isimson}
+**Kayıt edilen kullanıcı :** ${isimön}${isim}
 
 **Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
 
@@ -59,5 +58,5 @@ exports.conf = {
 exports.help = {
   name: 'erkek',
   description: "Erkek kullanıcıları kayıt etme komutu.",
-  usage: '!erkek <isim> <yas>'
+  usage: '!erkek <yeni nick>'
 }
