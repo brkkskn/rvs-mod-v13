@@ -119,7 +119,7 @@ client.on("guildMemberAdd", async (member) => {
     .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin.**
 
      **Seninle Beraber ~*${member.guild.memberCount}*~ Kişiyiz.**
-     **Teyit Olabilmeniz için Lütfen - V.Confirmed¹ - Odalarından Birine Geçin.!**
+     **Teyit Olabilmeniz İçin Örnek = '!kayıt Burak 24' Yazınız.!**
      **Kayıt Tarihi: ${moment.utc(member.JoinedAt).format('DD.MM.YY')}**
      **Şüpheli Hesap!**
 
@@ -130,7 +130,7 @@ client.on("guildMemberAdd", async (member) => {
     .setTimestamp()
     .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
         
-    let mkanal = member.guild.channels.find(`name`, "taglı-alım");
+    let mkanal = member.guild.channels.find(`name`, "log-confirm");
     mkanal.send(embed);
     
     }else{
@@ -143,7 +143,7 @@ client.on("guildMemberAdd", async (member) => {
     .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin.**
 
      ${arrow}**Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
-     ${arrow}**Teyit Olabilmeniz için Lütfen - V.Confirmed¹ - Odalarından Birine Geçin.!**
+     ${arrow}**Teyit Olabilmeniz İçin Örnek = '!kayıt Burak 24' Yazınız.!**
      ${arrow}**Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
      ${arrow}**Güvenli Hesap!**
 
@@ -154,7 +154,7 @@ client.on("guildMemberAdd", async (member) => {
     .setTimestamp()
     .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
     
-    let mkanal = member.guild.channels.find(`name`, "taglı-alım");
+    let mkanal = member.guild.channels.find(`name`, "log-confirm");
     mkanal.send(embed);
       
       }
