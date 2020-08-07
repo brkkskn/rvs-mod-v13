@@ -192,3 +192,51 @@ client.on("guildMemberAdd", async (member) => {
       member.addRole(role)
 
 });
+
+/////////////////////////////////////
+///////////////////////////////////////////////////
+
+client.on("userUpdate", async (old, nev) => {
+  let emingSunucu = "695647957378138133"; //Sunucu ID
+  let emingKanal = "695651392173506672"; //BILGI KANAL ID
+  let emingRol = "701414200802541710"; //ROL ID
+  let emingTag = "♥"; //TAG
+  if (old.username !== nev.username) {
+    if (
+      nev.username.includes(emingTag) &&
+      !client.guilds
+        .get(emingSunucu)
+        .members.get(nev.id)
+        .roles.has(emingRol)
+    ) {
+      client.channels
+        .get(emingKanal)
+        .send(
+          ` **${nev}, \`${emingTag}\` Tagını aldı ${emingRol} rolünü kazandı.**`
+        );
+      client.guilds
+        .get(emingSunucu)
+        .members.get(nev.id)
+        .addRole(emingRol);
+    }
+    if (
+      !nev.username.includes(emingTag) &&
+      client.guilds
+        .get(emingSunucu)
+        .members.get(nev.id)
+        .roles.has(emingRol)
+    ) {
+      client.guilds
+        .get(emingSunucu)
+        .members.get(nev.id)
+        .removeRole(emingRol);
+      client.channels
+        .get(emingKanal)
+        .send(
+          ` **${nev}, \`${emingTag}\` Tagını çıkarttı ${emingRol} rolünü kaybetti.**`
+        );
+    }
+  }
+});
+
+///////////////////////////////////////////////////
