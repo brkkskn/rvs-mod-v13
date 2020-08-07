@@ -129,7 +129,7 @@ client.on("guildMemberAdd", async (member) => {
     
     .setTimestamp()
     .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
-     .setAuthor(message.author.username, message.author.avatarURL)       
+        
     let mkanal = member.guild.channels.find(`name`, "taglı-alım");
     mkanal.send(embed);
     
@@ -143,7 +143,7 @@ client.on("guildMemberAdd", async (member) => {
     .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin.**
 
      ${arrow} **Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
-     ${arrow} **Teyit Olabilmeniz İçin Örnek =** ' ${message.author.username}
+     ${arrow} **Teyit Olabilmeniz İçin Örnek =** ' <@${"740959845448155147"}>
      ${arrow} **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
      ${arrow} **Güvenli Hesap!**
 

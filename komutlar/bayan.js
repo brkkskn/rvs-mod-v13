@@ -7,8 +7,8 @@ let verbuse = '740959862300737556' //VERİLECEK ROL ID
 let verbusem = '740959862741270647' //VERİLECEK ROL ID
 let albuse = '740959861520597073' //ALINACAK ROL ID
 //let albusem = '703451025939497030' //ALINACAK ROL ID l Kullanmicaksanız silin kötü gözükür .
-let isimön = '✝' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
-let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
+let isimön = 'そ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+//let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
 
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
 
@@ -17,11 +17,11 @@ let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
   return message.channel.send(`Bu komutu kullanabilmek için \`Kayıt\` yetkisine sahip olmasınız.`);
   let member = message.mentions.members.first()
   let isim = args.slice(1).join(" ")
-  if (!member) return message.channel.send('Bir Üye Etiketlemelisin💖')
-  if (!isim) return message.channel.send('Bir İsim Yazmalısın 💖')
+  if (!member) return message.channel.send('**!kız @kullanıcıadı <isim> şeklinde olmalı!**')
+  if (!isim) return message.channel.send('**Bir isim yazmalısın.**')
 
   setTimeout(function(){
-  member.setNickname(`${isimön}${isim}${isimson}`)
+  member.setNickname(`${isimön}${isim}`)
   },2000)
   setTimeout(function(){
   member.addRole(verbuse)
@@ -37,7 +37,7 @@ let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
   .setColor('RANDOM')
   .setDescription(`✅ Kayıt işlemi Başarılı ✅
 
-**Kayıt edilen kullanıcı :** ${isimön}${isim}${isimson}
+**Kayıt edilen kullanıcı :** ${isimön}${isim}
 
 **Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
 
@@ -52,7 +52,7 @@ message.react(emoji)
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ['oyuncu','o'],
+  aliases: ['kiz','Kız'],
   permLevel: 0
 }
 exports.help = {

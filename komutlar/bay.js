@@ -17,8 +17,8 @@ let isimön = 'そ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
   return message.channel.send(`Bu komutu kullanabilmek için \`Kayıt\` yetkisine sahip olmasınız.`);
   let member = message.mentions.members.first()
   let isim = args.slice(1).join(" ")
-  if (!member) return message.channel.send('**!erkek @kullanıcıadı <isim> şeklinde olmalı!**')
-  if (!isim) return message.channel.send('**Bir isim yazmalısın.')
+  if (!member) return message.channel.send('**!erkek -KullanıcıAdı- -Isim- Şeklinde Olmalıdır!**')
+  if (!isim) return message.channel.send('**Bir isim yazmalısın.**')
 
   setTimeout(function(){
   member.setNickname(`${isimön}${isim}`)
@@ -31,13 +31,13 @@ let isimön = 'そ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
   member.removeRole(albuse)
   //member.addRole(albusem)
   },4000)
-  
+ const sonsuz = client.emojis.get (`741028297743401091`) 
  const emoji = client.emojis.find(emoji => emoji.name === "tik");
- let embed = new Discord.RichEmbed()
+ let embed = new Discord.RichEmbed()  
   .setColor('RANDOM')
-  .setDescription(`✅ Kayıt işlemi Başarılı ✅
+  .setDescription(`${sonsuz}  **Revers Kayıt Sistemi**  ${sonsuz}
 
-**Kayıt edilen kullanıcı :** ${isimön}${isim}
+**Kayıt edilen kullanıcı :** ${isimön}${isim}      
 
 **Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
 
@@ -52,7 +52,7 @@ message.react(emoji)
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ['oyuncu','o'],
+  aliases: ['Erkek','bay'],
   permLevel: 0
 }
 exports.help = {
