@@ -26,7 +26,7 @@ exports.run = async(client, message, args, ops) => {
         .addField("Teyit Olan Kişi", `${vUser}`, true)
         .addField("Teyit Cinsiyeti", "Athena", true)
         .addField("Teyit Sayısı", `${teyitsayisi}`, true)
-        .addField("Saudade Mudita", "Gururla Sunar...!", true)
+       // .addField("Saudade Mudita", "Gururla Sunar...!", true)
         .setTimestamp();
     let veriflog = message.guild.channels.find(`name`, "taglı-alım");
     if (!veriflog) return message.channel.send("Doğrulama Kullanıcı Log Kanalı bulunamadı. Lütfen 'taglı-alım' Adlı Kanal Oluşturunuz.`");
@@ -51,7 +51,7 @@ exports.run = async(client, message, args, ops) => {
     .setTimestamp()
     .setFooter(`KURALLARA UYMAYI UNUTMAYINIZ.!`)
     
-    let onay = message.guild.channels.find(`name`, "general-chat");
+    let onay = message.guild.channels.find(`name`, "---");
     onay.send(embed).then(m => m.delete(60000));
 }
 exports.conf = {
