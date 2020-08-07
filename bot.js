@@ -4,6 +4,8 @@ const ayarlar = require('./ayarlar.json');
 const chalk = require('chalk');
 const fs = require('fs');
 const moment = require('moment');
+const veri = require('quick.db');
+const db = require('quick.db');
 require('./util/eventLoader')(client);
 
 var prefix = ayarlar.prefix;
@@ -159,3 +161,74 @@ client.on("guildMemberAdd", async (member) => {
       
       }
 });
+
+client.on('message', async message => {
+    if (db.has(`spen_${message.guild.id}`) === false) return;
+
+    let sp = await db.fetch(`spamp_${message.author.id}`);
+    let sk = await db.fetch(`spamk_${message.guild.id}`);
+    let sb = await db.fetch(`spamb_${message.guild.id}`);
+    
+    if (!message.member.hasPermission("BAN_MEMBERS")) return;
+    
+    if (sp === 7) {
+      
+      const embed = new Discord.RichEmbed()
+      .setAuthor(client.user.username, client.user.avatarURL)
+      .setDescription(`${message.member} eğer spam yapmaya devam edersen mutelerim!`)
+      .setColor("RANDOM")
+      message.channel.send(embed).then(msg => msg.delete(5000));
+      
+    }
+    if (sp === 10) {
+     
+        message.guild.channels.forEach(async (channel, id) => {
+        message.channel.overwritePermissions(message.member, {
+          SEND_MESSAGES: false,
+          ADD_REACTIONS: false
+        });
+      }); 
+      
+      const embed = new Discord.RichEmbed()
+      .setAuthor(client.user.username, client.user.avatarURL)
+      .setDescription(`${message.member} kullanıcısı Spam yaptığı için **5** dakika mutelendi!`)
+      .setColor("RANDOM")
+      message.channel.send(embed).then(msg => msg.delete(5000));
+      
+      const ms = require('ms');
+      
+      
+      setTimeout(function() {
+        db.delete(`spamp_${message.author.id}`)
+        message.guild.channels.forEach(async (channel, id) => {
+        message.channel.overwritePermissions(message.member, {
+          SEND_MESSAGES: true,
+          ADD_REACTIONS: true,
+        });
+      });
+      
+      }, ms('5m')) 
+if (!sk) return  
+      
+    if (sp === sk) {
+    
+     const embed = new Discord.RichEmbed() 
+     .setAuthor(client.user.username, client.user.avatarURL) 
+     .setDescription(`${message.member} kullanıcısı **${sk}** kez spam yaptığı için sunucudan atıldı!`)
+     .setColor("RANDOM")
+     message.channel.send(embed)
+      
+     message.guild.member(message.member).kick();
+    
+    } 
+    if (sp === sb) {
+    
+     const embed = new Discord.RichEmbed() 
+     .setAuthor(client.user.username, client.user.avatarURL) 
+     .setDescription(`${message.member} kullanıcısı **${sb}** kez spam yaptığı için sunucudan banlandı!`)
+     .setColor("RANDOM")
+     message.channel.send(embed)
+    
+      message.guild.ban(message.member, 2);
+    }
+}})
