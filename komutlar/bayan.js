@@ -31,15 +31,16 @@ let isimön = 'そ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
   member.removeRole(albuse)
 
   },4000)
-  
+
+ const sonsuz = client.emojis.get (`741028297743401091`)   
  const emoji = client.emojis.find(emoji => emoji.name === "tik");
  let embed = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .setDescription(`✅ Kayıt işlemi Başarılı ✅
+  .setDescription(`${sonsuz} ‍  ‍  ‍ **Revers Kayıt Sistemi** ‍  ‍  ‍ ${sonsuz}
 
 **Kayıt edilen kullanıcı :** ${isimön}${isim}
 
-**Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
+**Kayıt işleminde verilen rol :** <@&${verbuse}> **-** <@&${verbusem}>
 
 **Kayıt işleminde alınan rol :** <@&${albuse}>
 `)
