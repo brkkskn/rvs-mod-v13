@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = function(client, message, args) {
-    const verify = client.emojis.get (`735122426878230539`)
+    const verify = client.emojis.get (`741289693760716881`)
     let bs = args.slice(0).join('+');
   
   let id = Number(args[0]);

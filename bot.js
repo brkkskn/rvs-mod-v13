@@ -129,23 +129,23 @@ client.on("guildMemberAdd", async (member) => {
     
     .setTimestamp()
     .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
-        
+     .setAuthor(message.author.username, message.author.avatarURL)       
     let mkanal = member.guild.channels.find(`name`, "taglı-alım");
     mkanal.send(embed);
     
     }else{
               member.addRole("0464564564564564")
-    const arrow = client.emojis.get (`740989952589955219`) 
-    const verify = client.emojis.get (`735122426878230539`)
+    const arrow = client.emojis.get (`741028732784869406`) 
+    const verify = client.emojis.get (`741289693760716881`)
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
     .setAuthor(client.user.username,client.user.displayAvatarURL)
     .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin.**
 
-     ${arrow}**Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
-     ${arrow}**Teyit Olabilmeniz İçin Örnek = '!kayıt Burak 24' Yazınız.!**
-     ${arrow}**Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
-     ${arrow}**Güvenli Hesap!**
+     ${arrow} **Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
+     ${arrow} **Teyit Olabilmeniz İçin Örnek =** ' ${message.author.username}
+     ${arrow} **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
+     ${arrow} **Güvenli Hesap!**
 
     ${verify} **Bol keyifli zaman geçirmeniz dileğiyle - Trigger.**
 
