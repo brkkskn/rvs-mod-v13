@@ -143,7 +143,7 @@ client.on("guildMemberAdd", async (member) => {
     .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin.**
 
      ${arrow} **Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
-     ${arrow} **Teyit Olabilmeniz İçin Örnek =** ' <@${"740959845448155147"}>
+     ${arrow} **Teyit Olabilmeniz İçin ** '
      ${arrow} **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
      ${arrow} **Güvenli Hesap!**
 
