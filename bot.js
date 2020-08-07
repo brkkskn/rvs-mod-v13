@@ -197,10 +197,10 @@ client.on("guildMemberAdd", async (member) => {
 ///////////////////////////////////////////////////
 
 client.on("userUpdate", async (old, nev) => {
-  let emingSunucu = "695647957378138133"; //Sunucu ID
-  let emingKanal = "695651392173506672"; //BILGI KANAL ID
-  let emingRol = "701414200802541710"; //ROL ID
-  let emingTag = "♥"; //TAG
+  let emingSunucu = "722442177141145632"; //Sunucu ID
+  let emingKanal = "741040376747655320"; //BILGI KANAL ID
+  let emingRol = "740959856734765128"; //ROL ID
+  let emingTag = "そ"; //TAG
   if (old.username !== nev.username) {
     if (
       nev.username.includes(emingTag) &&
@@ -212,7 +212,7 @@ client.on("userUpdate", async (old, nev) => {
       client.channels
         .get(emingKanal)
         .send(
-          ` **${nev}, \`${emingTag}\` Tagını aldı ${emingRol} rolünü kazandı.**`
+          ` **${nev}, \`${emingTag}\` Tagını aldı **${emingRol}** rolünü kazandı.**`
         );
       client.guilds
         .get(emingSunucu)
