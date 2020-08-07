@@ -9,11 +9,11 @@ exports.run = async(client, message, args, ops) => {
     }  
     let toverify = message.guild.member(message.mentions.users.first());
     let verifyrole = message.guild.roles.find(`name`, "Poseidon");
-    let verifyrolee = message.guild.roles.find(`name`, "Misafir");
+    let verifyrolee = message.guild.roles.find(`name`, "Unconfirmed");
     if(toverify.roles.find(`name`, "Poseidon")) return message.channel.send('Teyit Başarısız, Kullanıcı Zaten Kayıtlı.')
-    if(toverify.roles.find(`name`, "Kız")) return message.channel.send('Teyit Başarısız, Kullanıcı Zaten Kayıtlı.')
+    if(toverify.roles.find(`name`, "Athena")) return message.channel.send('Teyit Başarısız, Kullanıcı Zaten Kayıtlı.')
     if (!verifyrole) return message.reply("Rol Bulunamadı Lütfen 'Poseidon' Adıyla Rol Oluşturunuz.");
-    if (!verifyrolee) return message.reply("Rol Bulunamadı Lütfen 'Misafir' Adıyla Rol Oluşturunuz.");
+    if (!verifyrolee) return message.reply("Rol Bulunamadı Lütfen 'Unconfirmed' Adıyla Rol Oluşturunuz.");
     if (!toverify) return message.reply("Bir kullanıcıdan bahsetmelisin.");
     await (toverify.addRole(verifyrole.id),toverify.removeRole(verifyrolee.id));
     let vUser = message.guild.member(message.mentions.users.first());
@@ -53,7 +53,7 @@ exports.run = async(client, message, args, ops) => {
     .setTimestamp()
     .setFooter(`KURALLARA UYMAYI UNUTMAYINIZ.!`)
     
-    let onay = message.guild.channels.find(`name`, "GENEL SOHBET KANAL ADI");
+    let onay = message.guild.channels.find(`name`, "general-chat");
     onay.send(embed).then(m => m.delete(60000));
   
 }
