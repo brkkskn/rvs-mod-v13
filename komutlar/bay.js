@@ -6,7 +6,7 @@ let kayityetkili = '740959845448155147' //KAYIT YETKİLİSİ ID
 let verbuse = '740959863311564892' //VERİLECEK ROL ID
 let verbusem = '740959864401952861' //VERİLECEK ROL ID
 let albuse = '740959861520597073' //ALINACAK ROL ID
-let albusem = '740959861520597073' //ALINACAK ROL ID l Kullanmicaksanız silin
+//let albusem = '740959861520597073' //ALINACAK ROL ID l Kullanmicaksanız silin
 let isimön = 'そ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 //let yas = args[1] 
 //if (!isim) return message.channel.send(`*İsmini girmelisin!**`)
@@ -29,7 +29,7 @@ let isimön = 'そ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
   },3000)
   setTimeout(function(){
   member.removeRole(albuse)
-  member.addRole(albusem)
+  //member.addRole(albusem)
   },4000)
   
  const emoji = client.emojis.find(emoji => emoji.name === "tik");
@@ -41,7 +41,7 @@ let isimön = 'そ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 
 **Kayıt işleminde verilen rol :** <@&${verbuse}>, <@&${verbusem}>
 
-**Kayıt işleminde alınan rol :** <@&${albuse}>, <@&${albusem}>
+**Kayıt işleminde alınan rol :** <@&${albuse}>
 `)
   .setFooter(`Komutu kullanan yetkili : ${message.author.username}`) 
   .setImage("https://37.media.tumblr.com/f1d867e7b7771f57ccf325a13630ce29/tumblr_n3zeepZMFm1ttv14wo1_r1_250.gif")

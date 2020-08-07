@@ -130,12 +130,12 @@ client.on("guildMemberAdd", async (member) => {
     .setTimestamp()
     .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
         
-    let mkanal = member.guild.channels.find(`name`, "log-confirm");
+    let mkanal = member.guild.channels.find(`name`, "taglı-alım");
     mkanal.send(embed);
     
     }else{
               member.addRole("0464564564564564")
-    const arrow = client.emojis.get (`740174062747123762`) 
+    const arrow = client.emojis.get (`740989952589955219`) 
     const verify = client.emojis.get (`735122426878230539`)
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
@@ -154,8 +154,41 @@ client.on("guildMemberAdd", async (member) => {
     .setTimestamp()
     .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
     
-    let mkanal = member.guild.channels.find(`name`, "log-confirm");
+    let mkanal = member.guild.channels.find(`name`, "taglı-alım");
     mkanal.send(embed);
       
       }
+});
+
+client.on("guildMemberAdd", async member => {
+        let sayac = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
+  let otorole =  JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
+      let arole = otorole[member.guild.id].sayi
+  let giriscikis = JSON.parse(fs.readFileSync("./otorol.json", "utf8")); 
+  let embed = new Discord.RichEmbed()
+    .setTitle('Otorol Sistemi')
+    .setDescription(`:loudspeaker: :inbox_tray:  @${member.user.tag}'a Otorol Başarılıyla Verilmiştir. `)
+.setColor("GREEN")
+    .setFooter("ForumGrand", client.user.avatarURL);
+
+  if (!giriscikis[member.guild.id].kanal) {
+    return;
+  }
+
+  try {
+    let giriscikiskanalID = giriscikis[member.guild.id].kanal;
+    let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
+   // giriscikiskanali.send(`::loudspeaker: :white_check_mark: :rose: Hoşgeldin **${member.user.tag}** Rolün Başarılı Bir Şekilde Verildimiştir. :rose: :white_check_mark: :loudspeaker:`);
+  } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
+    return console.log(e)
+  }
+
+});
+
+client.on("guildMemberAdd", async (member) => {
+      let autorole =  JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
+      let role = autorole[member.guild.id].sayi
+
+      member.addRole(role)
+
 });
