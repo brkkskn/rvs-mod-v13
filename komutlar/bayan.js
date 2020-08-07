@@ -7,7 +7,7 @@ let verbuse = '740959862300737556' //VERİLECEK ROL ID
 let verbusem = '740959862741270647' //VERİLECEK ROL ID
 let albuse = '740959861520597073' //ALINACAK ROL ID
 //let albusem = '703451025939497030' //ALINACAK ROL ID l Kullanmicaksanız silin kötü gözükür .
-let isimön = 'そ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+let isimön = '• ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 //let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
 
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)

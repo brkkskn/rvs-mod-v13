@@ -7,7 +7,7 @@ let verbuse = '740959863311564892' //VERİLECEK ROL ID
 let verbusem = '740959864401952861' //VERİLECEK ROL ID
 let albuse = '740959861520597073' //ALINACAK ROL ID
 //let albusem = '740959861520597073' //ALINACAK ROL ID l Kullanmicaksanız silin
-let isimön = 'そ ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+let isimön = '• ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 //let yas = args[1] 
 //if (!isim) return message.channel.send(`*İsmini girmelisin!**`)
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
