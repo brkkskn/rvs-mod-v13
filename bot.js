@@ -212,7 +212,7 @@ client.on("userUpdate", async (old, nev) => {
       client.channels
         .get(emingKanal)
         .send(
-          ` **${nev}, \`${emingTag}\` Tagını aldı **${emingRol}** rolünü kazandı.**`
+          ` **${nev}, \`${emingTag}\` Tagını aldı \${emingRol}\ rolünü kazandı.**`
         );
       client.guilds
         .get(emingSunucu)
