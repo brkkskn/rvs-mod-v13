@@ -12,8 +12,8 @@ exports.run = (client, message, args) => {
   let guild = message.guild
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
-  let modlog = guild.channels.find('name', 'genel-chat');
-  if (!modlog) return message.reply('`genel-chat` kanalını bulamıyorum.');
+  let modlog = guild.channels.find('name', 'general-chat');
+  if (!modlog) return message.reply('`general-chat` kanalını bulamıyorum.');
   if (reason.length < 1) return message.reply('Ban sebebini yazmalısın.');
   if (message.mentions.users.size < 1) return message.reply('Kimi banlayacağını yazmalısın.').catch(console.error);
 
