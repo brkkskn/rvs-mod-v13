@@ -130,7 +130,7 @@ client.on("guildMemberAdd", async (member) => {
     .setTimestamp()
     .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
         
-    let mkanal = member.guild.channels.find(`name`, "taglı-alım");
+    let mkanal = member.guild.channels.find(`name`, "register-chat");
     mkanal.send(embed);
     
     }else{
@@ -154,7 +154,7 @@ client.on("guildMemberAdd", async (member) => {
     .setTimestamp()
     .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
     
-    let mkanal = member.guild.channels.find(`name`, "taglı-alım");
+    let mkanal = member.guild.channels.find(`name`, "register-chat");
     mkanal.send(embed);
       
       }
