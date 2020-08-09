@@ -1,34 +1,31 @@
-const Discord = require("discord.js");
-//Dcs Ekibi
-module.exports.run = async (client, message, args) => {
-  const voiceChannels = message.guild.channels.filter(c => c.type === "voice");
-  let count = 0;
+const Discord = require('discord.js');
 
-  for (const [id, voiceChannel] of voiceChannels)
-    count += voiceChannel.members.size;
-  const emoji = client.emojis.find(emoji => emoji.name === "tik");
-  const embed = new Discord.RichEmbed()
-    .setColor("0x3") //Dcs Ekibi
-    .setAuthor("Toplam Üye", `${message.author.displayAvatarURL}`)
-    .addField(
-      `**Ses Kanallarında ${count} Kişi Bulunmaktadır!**`,
-      `**Sunucuda ${message.guild.memberCount} Kişi Bulunmaktadır!**`
-    )
-    .setThumbnail(message.guild.iconURL)
-    .setTimestamp();
+exports.run = async (client, message, args) => {
+	if (!message.guild) return message.author.sendMessage('Bu Komutu Sadece Sunucularda Kulanabilirsiniz!');
 
-  message.channel.sendEmbed(embed);
-  message.react(emoji);
-};
+    const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');
+    let count = 0;
+    for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
+  let tag = ''
+    const codare = new Discord.RichEmbed()
+        .setColor("0x3")
+    .setTitle(`Say Sistemi CODARE`)
+        .addField("Sunucudaki üye sayısı", message.guild.memberCount)
+        .addField("Çevrimiçi üye sayısı", message.guild.members.filter(m => !m.user.bot && m.user.presence.status !== "offline").size)
+        .addField("Seslideki üye sayısı", count)
+        .addField("Tagdaki üye sayısı", message.guild.members.filter(m => m.user.username.includes(tag)).size)
+    message.channel.send(codare);
+
+}
+
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["total", "toplamüye", "toplamkişi", "totalmember"],
-  permLevel: 0
+    enabled: true,
+    guildOnly: false,
+    aliases: ['sayı'],
+    permLevel: 0
 };
-//Dcs Ekibi
+
 exports.help = {
-  name: "say",
-  description: "Sunucudaki ve Ses Kanallarındaki Kişi Sayısını Gösterir! ",
-  usage: "say"
-};
+    name: 'say',
+    description: 'Say',
+  }
