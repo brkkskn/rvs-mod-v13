@@ -8,7 +8,7 @@ let verbusem = '740959864401952861' //VERİLECEK ROL ID
 let albuse = '740959861520597073' //ALINACAK ROL ID
 //let albusem = '740959861520597073' //ALINACAK ROL ID l Kullanmicaksanız silin
 let isimön = '• ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
-//let yas = args[1] 
+let yas = args[1] 
 //if (!isim) return message.channel.send(`*İsmini girmelisin!**`)
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
 
@@ -19,9 +19,9 @@ let isimön = '• ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
   let isim = args.slice(1).join(" ")
   if (!member) return message.channel.send('**!erkek -KullanıcıAdı- -Isim- Şeklinde Olmalıdır!**')
   if (!isim) return message.channel.send('**Bir isim yazmalısın.**')
-
+  if (!yas) return message.channel.send(`**Yaşını girmelisin!**`)
   setTimeout(function(){
-  member.setNickname(`${isimön}${isim}`)
+  member.setNickname(`${isimön}${isim} | ${yas}`  )
   },2000)
   setTimeout(function(){
   member.addRole(verbuse)
@@ -44,7 +44,7 @@ let isimön = '• ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 **Kayıt işleminde alınan rol :** <@&${albuse}>
 `)
   .setFooter(`Komutu kullanan yetkili : ${message.author.username}`) 
-  .setImage("https://37.media.tumblr.com/f1d867e7b7771f57ccf325a13630ce29/tumblr_n3zeepZMFm1ttv14wo1_r1_250.gif")
+  .setImage("https://cdn.discordapp.com/attachments/589366950015139844/741357730836512788/20200807_142346.gif")
 message.channel.send(embed)
 message.react(emoji)
 };
@@ -58,5 +58,5 @@ exports.conf = {
 exports.help = {
   name: 'erkek',
   description: "Erkek kullanıcıları kayıt etme komutu.",
-  usage: '!erkek <yeni nick>'
+  usage: '!erkek <önisim> <isim> <yaş>'
 }

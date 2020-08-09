@@ -148,8 +148,12 @@ client.on("guildMemberAdd", async (member) => {
      ${arrow} **Güvenli Hesap!**
 
     ${verify} **Bol keyifli zaman geçirmeniz dileğiyle - Trigger.**
+    
+  
 
-`,true)
+`
+    .setImage("https://cdn.discordapp.com/attachments/589366950015139844/741357730836512788/20200807_142346.gif")
+,true)
     
     .setTimestamp()
     .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
