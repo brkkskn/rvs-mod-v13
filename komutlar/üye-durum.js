@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 module.exports.run = async (bot, message, args) => {
-    let üyesayi = message.guild.memberCount;
+    let üyesayi = message.guild.memberCount; 
     let botlar = message.guild.members.filter(m => m.user.bot).size;
     let kullanıcılar = üyesayi - botlar;
 const embed = new Discord.RichEmbed()
@@ -15,7 +15,7 @@ message.channel.send(embed)
 module.exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["üyedurum","üyeler","durumlar","durum"],
+  aliases: ["üyedurum","üyeler","durumlar","durum","say"],
   permLevel: 0
 };
 

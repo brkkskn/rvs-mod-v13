@@ -151,12 +151,11 @@ client.on("guildMemberAdd", async (member) => {
     
   
 
-`
-    .setImage("https://cdn.discordapp.com/attachments/589366950015139844/741357730836512788/20200807_142346.gif")
-,true)
+`,true)
     
     .setTimestamp()
     .setFooter(`Şüpheli hesaplar yetkili ile iletişime geçsinler.!`)
+    .setImage("https://cdn.discordapp.com/attachments/589366950015139844/741357730836512788/20200807_142346.gif")
     
     let mkanal = member.guild.channels.find(`name`, "register-chat");
     mkanal.send(embed);

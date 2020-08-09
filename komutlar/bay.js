@@ -44,7 +44,7 @@ let yas = args[1]
 **Kayıt işleminde alınan rol :** <@&${albuse}>
 `)
   .setFooter(`Komutu kullanan yetkili : ${message.author.username}`) 
-  .setImage("https://cdn.discordapp.com/attachments/589366950015139844/741357730836512788/20200807_142346.gif")
+  .setImage("https://37.media.tumblr.com/f1d867e7b7771f57ccf325a13630ce29/tumblr_n3zeepZMFm1ttv14wo1_r1_250.gif")
 message.channel.send(embed)
 message.react(emoji)
 };
