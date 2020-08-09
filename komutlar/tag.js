@@ -1,40 +1,30 @@
 const Discord = require('discord.js');
-const db = require('quick.db');
 
-exports.run = async (client, message, args) => {
+exports.run = function(client, message, args) {
   
-  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.`);
+ // if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`Bu komutu kullanabilmek için "**Yönetici**" yetkisine sahip olmalısın.`);
+  let guild = message.guild
+  let link = args[0]
+  let ad = args[1]
+  if (!link) return message.channel.send(`Bir emoji linki belirtmelisin.`)
+  if (!ad) return message.channel.send(`Bir emoji ismi yazmalısın.`)
   
-  let tag = args[0];
-  let tagg = db.fetch(`tag_${message.guild.id}`)
-  
-  if (!tag) return message.channel.send('Bir tag girmelisin.')
-  
-    if(args[0] === "sıfırla") {
-    if(!tagg) {
-      message.channel.send(`Ayarlanmayan şeyi sıfırlayamazsın.`)
-      return
-    }
-    
-    db.delete(`tag_${message.guild.id}`)
-    message.channel.send(`Tag başarıyla sıfırlandı.`)
-    return
-  }
-  
-  db.set(`tag_${message.guild.id}`, tag)
-  message.channel.send(`Tag başarıyla \`${tag}\` olarak ayarlandı.`)
+  guild.createEmoji(link, ad)
+    .then(emoji => message.channel.send(`${emoji.name} adında emoji oluşturuldu. (${emoji})`))
    
-}
+  
+};
 
 exports.conf = {
   enabled: true,
-  guildOnly: true,
-  aliases: [],
-  permLevel: 0
+  guildOnly: false,
+  aliases: ['emoji-ekle','emojiekle','emoji-yükle'],
+  permLevel: 4,
+  kategori: "moderasyon"
 };
 
 exports.help = {
-  name: 'tag',
-  description: 'Tagı ayarlar.',
-  usage: '!tag <yazı>'
+  name: 'emojiyükle',
+  description: 'Belirttiğiniz link ve isimde emoji yükler.',
+  usage: 'emojiyükle <link> - <isim>'
 };
