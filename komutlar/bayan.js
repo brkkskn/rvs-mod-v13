@@ -7,7 +7,8 @@ let verbuse = '740959862300737556' //VERİLECEK ROL ID
 let verbusem = '740959862741270647' //VERİLECEK ROL ID
 let albuse = '740959861520597073' //ALINACAK ROL ID
 //let albusem = '703451025939497030' //ALINACAK ROL ID l Kullanmicaksanız silin kötü gözükür .
-let isimön = '• ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+let isimön = args [1] //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+let yas = args [2]
 //let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
 
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
@@ -19,9 +20,9 @@ let isimön = '• ' //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
   let isim = args.slice(1).join(" ")
   if (!member) return message.channel.send('**!kız @kullanıcıadı <isim> şeklinde olmalı!**')
   if (!isim) return message.channel.send('**Bir isim yazmalısın.**')
-
+  if (!yas) return message.channel.send('**Yaşını Girmelisin**')
   setTimeout(function(){
-  member.setNickname(`${isimön}${isim}`)
+  member.setNickname(`• ${isimön} | ${yas}`)
   },2000)
   setTimeout(function(){
   member.addRole(verbuse)
