@@ -1,24 +1,46 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+exports.run = (client, message, args) => {
+     
+let mention = message.mentions.users.first();
+let sender = "";
 
-exports.run = (client, message) => {
-			message.channel.send({embed: {
-            color: 0xD97634,
-            "image": {
-            "url": message.author.avatarURL,
-                }
-        }});
+if (message.channel.guild.member(message.author).nickname == null) {
+  sender = message.author.username;
+} else {
+  sender = message.channel.guild.member(message.author).nickname;
+}
+if (mention != null || mention != undefined) {
+  var name = mention.username + "'s ";
+  if (mention.username.endsWith("s")) {
+    name = mention.username + "' ";
+  }
+  const avatarEmbedOther = new Discord.RichEmbed()
+  .setAuthor(mention.username, mention.avatarURLavatarURL)
+  .setColor(0x3)
+  .setImage(mention.avatarURL)
+ .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL)
+  message.channel.sendEmbed(avatarEmbedOther);
+  return;
+} else {
+  const avatarEmbedYou = new Discord.RichEmbed()
+  .setAuthor(sender, message.author.avatarURL)
+  .setColor(0x3)
+  .setImage(message.author.avatarURL)
+  .setFooter(`🕊 Developed by Josef`, message.author.avatarURL)
+  message.channel.sendEmbed(avatarEmbedYou);
+  return;
+}
+message.channel.sendMessage("Bi hata oldu galiba?");
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['pp', 'avatar'],
+  aliases: ['avatar', 'pp'],
+  kategori: "AVATAR KOMUTLARI",
   permLevel: 0
 };
 
 exports.help = {
-  name: 'avatarım',
-  description: 'kedileri gösterir.',
-  usage: 'avatarım'
+  name : 'avatar' ,
 };
