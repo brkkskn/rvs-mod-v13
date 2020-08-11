@@ -14,8 +14,8 @@ exports.run = (client, message, args) => {
   client.unbanReason = reason;
   client.unbanAuth = message.author;
   let user = args[0];
-  let modlog = guild.channels.find('name', 'mod-log');
-  if (!modlog) return message.reply('`mod-log` kanalını bulamıyorum.');
+  let modlog = guild.channels.find('name', 'general-chat');
+  if (!modlog) return message.reply('`general-chat` kanalını bulamıyorum.');
   if (reason.length < 1) return message.reply('Ban kaldırma sebebini yazmalısın.');
   if (!user) return message.reply('Banı kaldırılacak kişinin ID numarasını yazmalısın.').catch(console.error);
   message.guild.unban(user);
