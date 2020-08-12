@@ -249,9 +249,9 @@ client.on("userUpdate", async (old, nev) => {
 client.on('ready', () => {
   console.log(`Console Logs`);
   setInterval(function() {
-    let channel = client.channels.get("70959967435030548") //MESAJIN GİDECEĞİ KANAL ID
+    let channel = client.channels.get("74095996743503054") //MESAJIN GİDECEĞİ KANAL ID
     if (channel) {
-      channel.send("sensin çomar amk malı")
+      channel.send("birgün herkes kitap okuycak <@615215543032479760>")
     }
   }, 10000) //1000 ms = 1sn 
 })
