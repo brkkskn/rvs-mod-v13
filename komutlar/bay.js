@@ -40,7 +40,7 @@ let yas = args[2]
   .setColor('RANDOM')
   .setDescription(`${sonsuz} ‍  ‍  ‍ **Revers Kayıt Sistemi** ‍  ‍  ‍ ${sonsuz}
 
-**Kayıt edilen kullanıcı :** ${isimön}${isim}      
+**Kayıt edilen kullanıcı :** ${isimön} ${yas}      
 
 **Kayıt işleminde verilen rol :** <@&${verbuse}> **-** <@&${verbusem}>
 
