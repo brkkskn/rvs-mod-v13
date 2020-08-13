@@ -136,18 +136,18 @@ client.on("guildMemberAdd", async (member) => {
     }else{
               member.addRole("0464564564564564")
     const arrow = client.emojis.get (`741028732784869406`) 
-    const verify = client.emojis.get (`741289693760716881`)
+    const verifyy = client.emojis.get (`722641748005879828`)
     const embed = new Discord.RichEmbed()
      .setColor("#0080FF")
     .setAuthor(client.user.username,client.user.displayAvatarURL)
     .setDescription(`<@${member.user.id}>**, Aramıza Hoşgeldin.**
 
-     ${arrow} **Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
+     ${arrow}  **Seninle Beraber ${member.guild.memberCount} Kişiyiz.**
      ${arrow} **Teyit Olabilmeniz İçin -V.Confirmed- Odalarından Birine Geçiniz.** '
      ${arrow} **Kayıt Tarihi: ${moment.utc(member.user.createdAt).format('DD.MM.YY')}**
      ${arrow} **Güvenli Hesap!**
 
-    ${verify} **Bol keyifli zaman geçirmeniz dileğiyle - Trigger.**
+    ${verifyy} **Bol keyifli zaman geçirmeniz dileğiyle - Trigger.**
     
   
 
