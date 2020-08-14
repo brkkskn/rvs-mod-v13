@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
     const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');
     let count = 0;
     for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
-  let tag = 'そ'
+  let tag = '✦'
     const codare = new Discord.RichEmbed()
         .setColor("0x3")
     .setTitle(`Say Sistemi Andre Rieu`)
