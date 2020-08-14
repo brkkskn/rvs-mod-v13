@@ -24,7 +24,7 @@ let yas = args[2]
   if(yas>50) return message.reply("**Emekli olcak yaştasın ne işin var burda orospu evladı.**")
 
   setTimeout(function(){
-  member.setNickname(`• ${isimön} | ${yas} `)
+  member.setNickname(`✧ ${isimön} | ${yas} `)
   },2000)
   setTimeout(function(){
   member.addRole(verbuse)

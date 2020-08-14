@@ -22,7 +22,7 @@ let yas = args [2]
   if (!isim) return message.channel.send('**Bir isim yazmalısın.**')
   if (!yas) return message.channel.send('**Yaşını Girmelisin**')
   setTimeout(function(){
-  member.setNickname(`• ${isimön} | ${yas}`)
+  member.setNickname(`✧ ${isimön} | ${yas}`)
   },2000)
   setTimeout(function(){
   member.addRole(verbuse)

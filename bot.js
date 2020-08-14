@@ -203,7 +203,7 @@ client.on("userUpdate", async (old, nev) => {
   let emingSunucu = "722442177141145632"; //Sunucu ID
   let emingKanal = "742394779937144903"; //BILGI KANAL ID
   let emingRol = "740959856734765128"; //ROL ID
-  let emingTag = "そ"; //TAG
+  let emingTag = "✦"; //TAG
   if (old.username !== nev.username) {
     if (
       nev.username.includes(emingTag) &&
@@ -215,7 +215,7 @@ client.on("userUpdate", async (old, nev) => {
       client.channels
         .get(emingKanal)
         .send(
-          ` **${nev}, \`${emingTag}\` Tagını aldı \`そ Family of the Revers\` rolünü kazandı.**`
+          ` **${nev}, \`${emingTag}\` Tagını aldı \`✦ Family of the Revers\` rolünü kazandı.**`
         );
       client.guilds
         .get(emingSunucu)

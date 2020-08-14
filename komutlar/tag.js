@@ -9,7 +9,7 @@ exports.run = (client, message) => {
     .setColor(0x00AE86)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription(`**Iste Sunucu Tagımız** ${arrow}  \`そ\` `);
+    .setDescription(`**Iste Sunucu Tagımız** ${arrow}  \`✦\` `);
     message.channel.sendEmbed(ozelmesajkontrol) }
 };
 
