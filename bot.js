@@ -255,3 +255,12 @@ client.on('ready', () => {
     }
   }, 10000) //1000 ms = 1sn 
 })
+
+
+
+
+
+client.on('ready', () => {
+  client.channels.get('').join()
+})
+//Developed by Owner Of The Night
