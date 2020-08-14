@@ -265,23 +265,5 @@ client.on('ready', () => {
 })
 //Developed by Owner Of The Night
 
-client.on("message", async msg => {
-
-
-  const ii = await db.fetch(`ssaass_${msg.guild.id}`);
-    if (ii == 'acik') {
-      if (msg.content.toLowerCase() == 'sa' || msg.content.toLowerCase() == 's.a' || msg.content.toLowerCase() == 'selamun aleyküm') {
-          try {
-
-                  return msg.reply('Aleyküm Selam, Hoşgeldin')
-          } catch(err) {
-            console.log(err);
-          }
-      }
-    }
-    else if (ii == 'kapali') {
-    
-    }
-    if (!ii) return;
-
-    });
+//---Bu Kod projenizde botun ana dosyasına atılacaktır. //CodeMareFi tarafından hazırlanmıştır - - - Ekleyen //Sadista 
+client.on('message', async (msg, member, guild) => {   let i = await  db.fetch(`saas_${msg.guild.id}`)       if(i === 'açık') {         if (msg.content.toLowerCase() === 'sa') {         msg.reply('Aleyküm Selam Hoşgeldin');       }       }     })
