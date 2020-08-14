@@ -266,4 +266,8 @@ client.on('ready', () => {
 //Developed by Owner Of The Night
 
 //---Bu Kod projenizde botun ana dosyasına atılacaktır. //CodeMareFi tarafından hazırlanmıştır - - - Ekleyen //Sadista 
-client.on('message', async (msg, member, guild) => {   let i = await  db.fetch(`saas_${msg.guild.id}`)       if(i === 'açık') {         if (msg.content.toLowerCase() === 'sa') {         msg.reply('Aleyküm Selam Hoşgeldin');       }       }     })
+client.on('message', async (msg, member, guild) => {   
+  let i = await  db.fetch(`saas_${msg.guild.id}`)       
+  if(i === 'açık') {         
+  if (msg.content.toLowerCase() === 'sa') {         
+    msg.reply('Aleyküm Selam Hoşgeldin');       }       }     })
