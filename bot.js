@@ -261,6 +261,27 @@ client.on('ready', () => {
 
 
 client.on('ready', () => {
-  client.channels.get('').join()
+  client.channels.get('741977321577381999').join()
 })
 //Developed by Owner Of The Night
+
+client.on("message", async msg => {
+
+
+  const ii = await db.fetch(`ssaass_${msg.guild.id}`);
+    if (ii == 'acik') {
+      if (msg.content.toLowerCase() == 'sa' || msg.content.toLowerCase() == 's.a' || msg.content.toLowerCase() == 'selamun aleyküm') {
+          try {
+
+                  return msg.reply('Aleyküm Selam, Hoşgeldin')
+          } catch(err) {
+            console.log(err);
+          }
+      }
+    }
+    else if (ii == 'kapali') {
+    
+    }
+    if (!ii) return;
+
+    });
