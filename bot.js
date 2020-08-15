@@ -265,3 +265,87 @@ client.on('ready', () => {
 })
 //Developed by Owner Of The Night
 
+
+client.on("message", message => {
+  if (message.channel.type === "dm") return;
+  if (message.content.toLowerCase() === "say") {
+  var memettaglı = 0;
+  let memettag = '✦';
+  message.guild.members.forEach(member => {
+  if(member.user.username.includes(memettag)) {
+  memettaglı = memettaglı+1
+    }
+  })
+    const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');
+    let count = 0;
+    for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
+    const embed = new Discord.RichEmbed()
+    .setColor(`FFFFFF`)
+    .setDescription(`<a:partner:722641259382177802> • Sunucumuzda **${message.guild.memberCount}** toplam, **${memettaglı}** taglı, **${count}** sesli üye bulunmakta.`)
+    .setFooter(`HELIOS ❤ ECHO`)
+    message.channel.send(embed)
+  }
+});
+
+client.on("message", message => {
+  if (message.channel.type === "dm") return;
+  if (message.content.toLowerCase() === "!say") {
+  var memettaglı = 0;
+  let memettag = '✦';
+  message.guild.members.forEach(member => {
+  if(member.user.username.includes(memettag)) {
+  memettaglı = memettaglı+1
+    }
+  })
+    const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');
+    let count = 0;
+    for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
+    const embed = new Discord.RichEmbed()
+    .setColor(`FFFFFF`)
+    .setDescription(`<a:partner:722641259382177802> • Sunucumuzda **${message.guild.memberCount}** toplam, **${memettaglı}** taglı, **${count}** sesli üye bulunmakta.`)
+    .setFooter(`HELIOS ❤ ECHO`)
+    message.channel.send(embed)
+  }
+});
+
+client.on("message", message => {
+  if (message.channel.type === "dm") return;
+  if (message.content.toLowerCase() === "r!say") {
+  var memettaglı = 0;
+  let memettag = '✦';
+  message.guild.members.forEach(member => {
+  if(member.user.username.includes(memettag)) {
+  memettaglı = memettaglı+1
+    }
+  })
+    const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');
+    let count = 0;
+    for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
+    const embed = new Discord.RichEmbed()
+    .setColor(`FFFFFF`)
+    .setDescription(`<a:partner:722641259382177802> • Sunucumuzda **${message.guild.memberCount}** toplam, **${memettaglı}** taglı, **${count}** sesli üye bulunmakta.`)
+    .setFooter(`HELIOS ❤ ECHO`)
+    message.channel.send(embed)
+  }
+});
+
+client.on("message", message => {
+  if (message.channel.type === "dm") return;
+  if (message.content.toLowerCase() === "üye") {
+  var memettaglı = 0;
+  let memettag = '✦';
+  message.guild.members.forEach(member => {
+  if(member.user.username.includes(memettag)) {
+  memettaglı = memettaglı+1
+    }
+  })
+    const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');
+    let count = 0;
+    for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
+    const embed = new Discord.RichEmbed()
+    .setColor(`FFFFFF`)
+    .setDescription(`<a:partner:722641259382177802> • Sunucumuzda **${message.guild.memberCount}** toplam, **${memettaglı}** taglı, **${count}** sesli üye bulunmakta.`)
+    .setFooter(`HELIOS ❤ ECHO`)
+    message.channel.send(embed)
+  }
+});
