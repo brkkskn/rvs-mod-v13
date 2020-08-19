@@ -7,5 +7,5 @@ var prefix = ayarlar.prefix;
 
 module.exports = client => {
   client.user.setStatus("dnd");
-  client.user.setActivity("REVERS")
+  client.user.setActivity("Revers Family")
 };
