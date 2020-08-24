@@ -2,10 +2,10 @@ const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
 
-let kayityetkili = '740959845448155147' //KAYIT YETKİLİSİ ID
-let verbuse = '740959863311564892' //VERİLECEK ROL ID
-let verbusem = '740959864401952861' //VERİLECEK ROL ID
-let albuse = '740959861520597073' //ALINACAK ROL ID
+let kayityetkili = '747488322120712294' //KAYIT YETKİLİSİ ID
+let verbuse = '747488331897634856' //VERİLECEK ROL ID
+let verbusem = '747488332715655289' //VERİLECEK ROL ID
+let albuse = '747488329758671059' //ALINACAK ROL ID
 //let albusem = '740959861520597073' //ALINACAK ROL ID l Kullanmicaksanız silin
 let isimön = args[1] //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 let yas = args[2] 
