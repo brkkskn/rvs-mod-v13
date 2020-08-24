@@ -4,8 +4,8 @@ exports.run = async (client, message, args) => {
 
 let kayityetkili = '747488322120712294' //KAYIT YETKİLİSİ ID
 let verbuse = '747488330484154458' //VERİLECEK ROL ID
-let verbusem = '74095986274127064' //VERİLECEK ROL ID
-let albuse = '740959861520597073' //ALINACAK ROL ID
+let verbusem = '747488331280941086' //VERİLECEK ROL ID
+let albuse = '747488329758671059' //ALINACAK ROL ID
 //let albusem = '703451025939497030' //ALINACAK ROL ID l Kullanmicaksanız silin kötü gözükür .
 let isimön = args [1] //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
 let yas = args [2]
