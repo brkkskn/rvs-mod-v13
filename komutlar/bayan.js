@@ -21,6 +21,8 @@ let yas = args [2]
   if (!member) return message.channel.send('**!kız @kullanıcıadı <isim> şeklinde olmalı!**')
   if (!isim) return message.channel.send('**Bir isim yazmalısın.**')
   if (!yas) return message.channel.send('**Yaşını Girmelisin**')
+  if(yas<15) return message.reply("**En az 15 yaşını doldurmuş olması gerekli.**")
+  if(yas>50) return message.reply("**Emekli olcak yaştasın ne işin var burda orospu evladı.**")
   setTimeout(function(){
   member.setNickname(`✧ ${isimön} | ${yas}`)
   },2000)
