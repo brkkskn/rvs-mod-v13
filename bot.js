@@ -200,10 +200,10 @@ client.on("guildMemberAdd", async (member) => {
 ///////////////////////////////////////////////////
 
 client.on("userUpdate", async (old, nev) => {
-  let emingSunucu = "722442177141145632"; //Sunucu ID
-  let emingKanal = "742394779937144903"; //BILGI KANAL ID
-  let emingRol = "740959856734765128"; //ROL ID
-  let emingTag = "✦"; //TAG
+  let emingSunucu = "717698440410431529"; //Sunucu ID
+  let emingKanal = "747488421890490398"; //BILGI KANAL ID
+  let emingRol = "747488326029803612"; //ROL ID
+  let emingTag = ""; //TAG
   if (old.username !== nev.username) {
     if (
       nev.username.includes(emingTag) &&
