@@ -3,7 +3,7 @@ const ayarlar = require('../ayarlar.json');
 
 exports.run = (client, message, args) => {
     const mesaj = args.slice(0).join(' ');
-    if(!message.member.roles.has("732225074660245603")) return message.channel.send(`Bu komutu kullanabilmek için \`〘R〙Owner\` yetkisine sahip olmasınız.`);
+    if(!message.member.roles.has("732225074660245603")) return message.channel.send(`Bu komutu kullanabilmek için \`Owner\` yetkisine sahip olmasınız.`);
     if(mesaj.length < 1) return message.channel.send(new Discord.RichEmbed().setDescription(`Herkese mesaj göndere bilmem için önce mesajını yazman lazım.`).setColor('BLACK'));
       try {
         message.guild.members.forEach(member=> {
