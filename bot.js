@@ -361,7 +361,7 @@ client.on('message', msg => {
     msg.reply('**Argo Kelime Kullanma**');
   }
   
-  if (msg.content === 'selamın aleyküm') {
+  if (msg.content === 'selamın aleykum') {
    	msg.reply('ve aleyküm selam');
   }
 
@@ -370,7 +370,7 @@ client.on('message', msg => {
   }
   
   if (msg.content === 'bye bye') {
-   	msg.reply('su gibi git su gibi gel');
+   	msg.reply('sağlıcakla kal!');
   }
 
   if (msg.content === 'günaydın') {
