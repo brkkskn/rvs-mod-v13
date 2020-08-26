@@ -396,5 +396,5 @@ client.on('message', msg => {
   if (msg.content === 'güle güle') {
    	msg.reply('sana da güle güle');
   }
-  
-});
+  //
+})

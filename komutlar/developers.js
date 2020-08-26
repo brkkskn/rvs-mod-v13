@@ -7,9 +7,10 @@ exports.run = (client, message) => {
     .setColor(0x00AE86)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription(`Yapımcım: Rєvєrs ✦ Trͥigͣgͫerᵂᴬᴿᴺᴵᴺᴳ ꧅
+    .setDescription(`**Creator: Rєvєrs ✦ Trͥigͣgͫerᵂᴬᴿᴺᴵᴺᴳ ꧅**
 
-    **Developers:Andre rieu #6666**`);
+    **Developer:Andre rieu #6666
+    Developer:Echoʳᵛˢ #0034**`);
     message.channel.sendEmbed(ozelmesajkontrol) }
 };
 
