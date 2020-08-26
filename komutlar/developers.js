@@ -3,11 +3,12 @@ const client = new Discord.Client();
 
 exports.run = (client, message) => {
   if (message.channel.type !== 'dm') {
+    const ates = client.emojis.get (`747858093462782074`);
     const ozelmesajkontrol = new Discord.RichEmbed()
     .setColor(0x00AE86)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription(`**Creator: Rєvєrs ✦ Trͥigͣgͫerᵂᴬᴿᴺᴵᴺᴳ ꧅**
+    .setDescription(`**${ates}Creator: Rєvєrs ✦ Trͥigͣgͫerᵂᴬᴿᴺᴵᴺᴳ ꧅**
 
     **Developer:Andre rieu #6666
     Developer:Echoʳᵛˢ #0034**`);
