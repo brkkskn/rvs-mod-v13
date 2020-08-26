@@ -377,6 +377,10 @@ client.on('message', msg => {
    	msg.reply('sana da günaydın');
   }
 
+  if (msg.content === 'tag') {
+   	msg.reply('✦');
+  }
+
   if (msg.content === 'herkese günaydın') {
    	msg.reply('yepyeni bir güne merhaba :)');
   }
@@ -397,3 +401,4 @@ client.on('message', msg => {
    	msg.reply('sana da güle güle');
   }
   
+});
