@@ -3,15 +3,18 @@ const client = new Discord.Client();
 
 exports.run = (client, message) => {
   if (message.channel.type !== 'dm') {
-    const ates = client.emojis.get (`747858093462782074`);
+    const ates = client.emojis.get (`747858093462782074`)
+    const ates1 = client.emojis.get (`747858109468508171`)
+    const ates2 = client.emojis.get (`747858124035195010`); 
     const ozelmesajkontrol = new Discord.RichEmbed()
     .setColor(0x00AE86)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription(`**${ates}Creator: Rєvєrs ✦ Trͥigͣgͫerᵂᴬᴿᴺᴵᴺᴳ ꧅**
+    .setDescription(`**${ates} Creator: Rєvєrs ✦ Trͥigͣgͫerᵂᴬᴿᴺᴵᴺᴳ ꧅**
 
-    **Developer:Andre rieu #6666
-    Developer:Echoʳᵛˢ #0034**`);
+    **${ates1} Developer:Andre rieu #6666
+
+    ${ates2} Developer:Echoʳᵛˢ #0034**`);
     message.channel.sendEmbed(ozelmesajkontrol) }
 };
 
