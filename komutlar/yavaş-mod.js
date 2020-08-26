@@ -29,7 +29,7 @@ request({
   exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["yavaşmod" , "slowmode"],
+  aliases: ["yavaşmod"],
   permLevel: 3,
 };
 
