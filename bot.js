@@ -203,7 +203,7 @@ client.on("userUpdate", async (old, nev) => {
   let emingSunucu = "717698440410431529"; //Sunucu ID
   let emingKanal = "747488421890490398"; //BILGI KANAL ID
   let emingRol = "747488326029803612"; //ROL ID
-  let emingTag = "✦-toplantı"; //TAG
+  let emingTag = "✦"; //TAG
   if (old.username !== nev.username) {
     if (
       nev.username.includes(emingTag) &&
