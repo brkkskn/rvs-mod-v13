@@ -17,11 +17,11 @@ exports.run = (client, message) => {
     .setAuthor(message.author.username, message.author.avatarURL)
     .setDescription(`**${emoji} Discord Genel Sorumlusu 'Rєvєrs ✦ DramaramaG#7777 **
 
-    **${ates1} Team Sorumlusu Rєvєrs ✦ 𝓡𝓾𝓱 𝓐𝓭𝓪𝓶
+    **${emoji1} Team Sorumlusu Rєvєrs ✦ 𝓡𝓾𝓱 𝓐𝓭𝓪𝓶
 
     Tag Alım Sorumlusu Rєvєrs ✦ 𝓡𝓾𝓱 𝓐𝓭𝓪𝓶
 
-    ${ates2} Chat Sorumlusu ✦ 𝓛𝓪 𝓿𝓲𝓮 𝓮𝓷 𝒸𝒾𝒶#4317**
+    ${emoji2} Chat Sorumlusu ✦ 𝓛𝓪 𝓿𝓲𝓮 𝓮𝓷 𝒸𝒾𝒶#4317**
 
     Chat Sorumlusu Seneca [✦]#3333
 
