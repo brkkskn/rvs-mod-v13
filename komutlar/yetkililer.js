@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 exports.run = (client, message) => {
   if (message.channel.type !== 'dm') {
-    const emoji = client.emojis.get (`747858093462782074`)
+    const emoji = client.emojis.get (`747535281305026781`)
     const emoji1 = client.emojis.get (`747858109468508171`)
     const emoji2 = client.emojis.get (`747858124035195010`)
     const emoji3 = client.emojis.get (`747858124035195010`)
@@ -15,7 +15,7 @@ exports.run = (client, message) => {
     .setColor(0x00AE86)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription(`**${ates} Discord Genel Sorumlusu 'Rєvєrs ✦ DramaramaG#7777 **
+    .setDescription(`**${emoji} Discord Genel Sorumlusu 'Rєvєrs ✦ DramaramaG#7777 **
 
     **${ates1} Team Sorumlusu Rєvєrs ✦ 𝓡𝓾𝓱 𝓐𝓭𝓪𝓶
 
