@@ -3,8 +3,8 @@
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
   "name": "YnsEmreArpaci",
-  "version": "0.0.1",
-  "description": "YnsEmreArpaci.",
+  "version": "0.0.2",
+  "description": "TriggerWarning",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
