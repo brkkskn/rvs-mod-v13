@@ -1,62 +1,62 @@
 const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
-
-let kayityetkili = '747488322120712294' //KAYIT YETKİLİSİ ID
-let verbuse = '747488330484154458' //VERİLECEK ROL ID
-let verbusem = '747488331280941086' //VERİLECEK ROL ID
-let albuse = '747488329758671059' //ALINACAK ROL ID
-//let albusem = '703451025939497030' //ALINACAK ROL ID l Kullanmicaksanız silin kötü gözükür .
-let isimön = args [1] //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
-let yas = args [2]
-//let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
-
+const emoji1 = client.emojis.cache.get("722641897419571260");
+const kayityetkili = message.guild.roles.cache.find(r => r.id === "818149322700750879") // Kayıt Yetkili
+const verbuse = message.guild.roles.cache.find(r => r.id === "818149328270524426") //VERİLECEK ROL ID
+const verbusem = message.guild.roles.cache.find(r => r.id === "825176337408065536") //VERİLECEK ROL ID
+const albuse = message.guild.roles.cache.find(r => r.id === "818149352001896491") //ALINACAK ROL ID
+//let albusem = '740959861520597073' //ALINACAK ROL ID l Kullanmicaksanız silin
+let isimön = args[1] //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+let yas = args[2] 
+//if (!isim) return message.channel.send(`*İsmini girmelisin!**`)
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
 
-  if(!message.member.roles.has(kayityetkili)) 
+ // if(!message.member.roles.has(kayityetkili)) 
   if(!message.member.hasPermission("ADMINISTRATOR"))
   return message.channel.send(`Bu komutu kullanabilmek için \`Kayıt\` yetkisine sahip olmasınız.`);
   let member = message.mentions.members.first()
   let isim = args.slice(1).join(" ")
-  if (!member) return message.channel.send('**!kız @kullanıcıadı <isim> şeklinde olmalı!**')
-  if (!isim) return message.channel.send('**Bir isim yazmalısın.**')
-  if (!yas) return message.channel.send('**Yaşını Girmelisin**')
+  if (!member) return message.channel.send('**.bayan <KullanıcıAdı> <Isim> <Yaş> Şeklinde Olmalıdır!**')
+  if (!isim) return message.channel.send('**.bayan <KullanıcıAdı> <Isim> <Yaş> Şeklinde Olmalıdır!**')
+  if (!yas) return message.channel.send('**.bayan <KullanıcıAdı> <Isim> <Yaş> Şeklinde Olmalıdır!**')
   if(yas<15) return message.reply("**En az 15 yaşını doldurmuş olması gerekli.**")
   if(yas>50) return message.reply("**Emekli olcak yaştasın ne işin var burda orospu evladı.**")
+
   setTimeout(function(){
-  member.setNickname(`✧ ${isimön} | ${yas}`)
+  member.setNickname(`⊀ ${isimön} | ${yas} `)
   },2000)
   setTimeout(function(){
-  member.addRole(verbuse)
-  member.addRole(verbusem)
+  member.roles.add(verbuse)
+  member.roles.add(verbusem)
   },3000)
   setTimeout(function(){
-  member.removeRole(albuse)
-
+  member.roles.remove(albuse)
+  //member.addRole(albusem)
   },4000)
-
- const sonsuz = client.emojis.get (`741028297743401091`)   
- const emoji = client.emojis.find(emoji => emoji.name === "tik");
- let embed = new Discord.RichEmbed()
+ //const sonsuz = client.emojis.get (`741987392856260678`) 
+// const emoji = client.emojis.find(emoji => emoji.name === "eyes");
+ let embed = new Discord.MessageEmbed()  
   .setColor('RANDOM')
-  .setDescription(`${sonsuz} ‍  ‍  ‍ **Revers Kayıt Sistemi** ‍  ‍  ‍ ${sonsuz}
+  .setThumbnail(member.user.avatarURL())
+  .setDescription(`${emoji1} ‍  ‍  ‍ **Revers Kayıt Sistemi** ‍  ‍  ‍ ${emoji1} ‍ 
 
-**Kayıt edilen kullanıcı :** ${isimön} ${yas}
+**Kayıt edilen kullanıcı :** ${isimön} ${yas}      
 
-**Kayıt işleminde verilen rol :** <@&${verbuse}> **-** <@&${verbusem}>
+**Kayıt işleminde verilen rol :** ${verbuse} **-** ${verbusem}
 
-**Kayıt işleminde alınan rol :** <@&${albuse}>
+**Kayıt işleminde alınan rol :** ${albuse}
 `)
-  .setFooter(`Komutu kullanan yetkili : ${message.author.username}`) 
-  .setImage("https://37.media.tumblr.com/f1d867e7b7771f57ccf325a13630ce29/tumblr_n3zeepZMFm1ttv14wo1_r1_250.gif")
+  .setFooter(`Komutu kullanan yetkili : ${message.author.username}`)
+  .setImage("https://cdn.discordapp.com/attachments/522576410083328010/838842688098926602/scsd.gif")
 message.channel.send(embed)
-message.react(emoji)
+//message.react(emoji)
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ['kiz','Kız'],
+  aliases: ['kiz','kız', 'bayan', 'k'],
   permLevel: 0
 }
 exports.help = {

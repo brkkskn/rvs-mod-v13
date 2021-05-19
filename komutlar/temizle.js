@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 
 exports.run = function(client, message, args) {
-    const verify = client.emojis.get (`741289693760716881`)
+    const verify = client.emojis.cache.get("722641748005879828");
+    
     let bs = args.slice(0).join('+');
   
   let id = Number(args[0]);
@@ -12,7 +13,7 @@ exports.run = function(client, message, args) {
 if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Bu Komutu Kullanmak İçin İzniniz Yok!");
 if(!args[0]) return message.channel.send("Hey, Lütfen Temizlenecek Mikatarı Belirtiniz!");
 message.channel.bulkDelete(args[0]).then(() => {
-  message.channel.send(`**[ ${args[0]} ] Adet Mesaj Başarıyla Silindi.** ${verify}`).then(msg => msg.delete(100));
+  message.channel.send(`**[ ${args[0]} ] Adet Mesaj Başarıyla Silindi.** ${verify} `).then(msg => msg.delete({ timeout: 5000 }));
   
 })
 }

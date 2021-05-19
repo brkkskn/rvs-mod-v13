@@ -5,7 +5,7 @@ var prefix = ayarlar.prefix;
 
 exports.run = async(client, message, args) => {
 
-        const yardim = new Discord.RichEmbed()
+        const yardim = new Discord.MessageEmbed()
 
              .setColor('#fff000')
              .setAuthor(`Yardım Komutları`, client.user.avatarURL) 
@@ -14,7 +14,7 @@ exports.run = async(client, message, args) => {
              .addField(`Linkler ->`, `[Lynx Discord](https://discord.gg/2n2r88N)`) // bunlar boş kalırsa hata verir
              .setFooter(`Menüyü ${message.author.username} tarafından istendi.`, message.author.avatarURL)
             
-        return message.channel.sendEmbed(yardim);
+        return message.channel.send(yardim);
 }
 
 exports.conf = {
