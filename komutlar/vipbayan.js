@@ -39,6 +39,7 @@ let yas = args[2]
  //const sonsuz = client.emojis.get (`741987392856260678`) 
 // const emoji = client.emojis.find(emoji => emoji.name === "eyes");
  let embed = new Discord.MessageEmbed()  
+ 
   .setColor('RANDOM')
   .setThumbnail(member.user.avatarURL())
   .setDescription(`${emoji1} ‍  ‍  ‍ **Revers Vip Kayıt Sistemi** ‍  ‍  ‍ ${emoji1} ‍ 

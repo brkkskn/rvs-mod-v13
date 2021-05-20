@@ -44,7 +44,7 @@ let yas = args[2]
   .setThumbnail(member.user.avatarURL())
   .setDescription(`${emoji1} ‍  ‍  ‍ **Revers Vip Kayıt Sistemi** ‍  ‍  ‍ ${emoji1} ‍ 
 
-**Kayıt edilen vip üye :** ${isimön} ${yas}      
+**Kayıt edilen vip üye:** ${isimön} ${yas}      
 
 **Verilen rol :** ${verbuse} **-** ${verbusem} **-** ${vip}
 
