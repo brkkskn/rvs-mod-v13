@@ -430,12 +430,12 @@ client.on("message", async message => {
         if (uyarisayisi === 3) {
           message.delete();
           await kullanici.ban({
-            reason: `revers Reklam-Engel Sistemi!`
+            reason: `Revers Reklam-Engel Sistemi!`
           });
           db.delete(`reklamuyari_${message.author.id}`);
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("revers Reklam Kick Sistemi")
+            .setTitle("Revers Reklam Kick Sistemi")
             .setDescription(
               `<@${message.author.id}> Atıldıktan Sonra Tekrar Reklam Yaptığı İçin Sunucudan Yasaklandı!`
             )
