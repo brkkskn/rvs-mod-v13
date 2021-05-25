@@ -17,16 +17,16 @@ if (mention != null || mention != undefined) {
   const avatarEmbedOther = new Discord.MessageEmbed()
   .setAuthor(mention.username, mention.avatarURLavatarURL)
   .setColor(0x3)
-  .setImage(mention.avatarURL)
- .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL)
+  .setImage(mention.avatarURL())
+ .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL())
   message.channel.send(avatarEmbedOther);
   return;
 } else {
   const avatarEmbedYou = new Discord.MessageEmbed()
-  .setAuthor(sender, message.author.avatarURL)
+  .setAuthor(sender, message.author.avatarURL())
   .setColor(0x3)
-  .setImage(message.author.avatarURL)
-  .setFooter(`🕊 Developed by Josef`, message.author.avatarURL)
+  .setImage(message.author.avatarURL())
+  .setFooter(`🕊 Developed by Josef`, message.author.avatarURL())
   message.channel.send(avatarEmbedYou);
   return;
 }
