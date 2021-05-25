@@ -299,7 +299,7 @@ client.on("message", async message => {
     const revers4 = new Discord.MessageEmbed()
 
       .setColor("RANDOM")
-      .setAuthor(message.author.username, message.author.avatarURL)
+      .setAuthor(message.author.username, message.author.avatarURL())
       .setDescription(`Afk Modundan Başarıyla Çıkıldı.`);
 
     message.channel.send(revers4);
@@ -342,7 +342,7 @@ client.on("message", async message => {
   ) {
     let e = await db.fetch(`sa-as_${message.guild.id}`);
     if (e === "acik") {
-      const revers5 = new Discord.RichEmbed()
+      const revers5 = new Discord.MessageEmbed()
      .setDescription(`Aleyküm Selam, Hoş Geldin Dostum`)
      .setColor("RANDOM")
       
@@ -391,24 +391,24 @@ client.on("message", async message => {
         message.delete();
         db.add(`reklamuyari_${message.author.id}`, 1); //uyarı puanı ekleme
         if (uyarisayisi === null) {
-          let uyari = new Discord.RichEmbed()
+          let uyari = new Discord.MessageEmbed()
             .setColor("BLACK")
             .setTitle("revers Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yapmayı Kes! Bu İlk Uyarın! (1/3)`
             )
-            .setFooter(client.user.username, client.user.avatarURL)
+            .setFooter(client.user.username, client.user.avatarURL())
             .setTimestamp();
           message.channel.send(uyari);
         }
         if (uyarisayisi === 1) {
-          let uyari = new Discord.RichEmbed()
+          let uyari = new Discord.MessageEmbed()
             .setColor("BLACK")
             .setTitle("revers Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yapmayı Kes! Bu İkinci Uyarın! (2/3)`
             )
-            .setFooter(client.user.username, client.user.avatarURL)
+            .setFooter(client.user.username, client.user.avatarURL())
             .setTimestamp();
           message.channel.send(uyari);
         }
@@ -417,13 +417,13 @@ client.on("message", async message => {
           await kullanici.kick({
             reason: `revers Code | Reklam-Engel Sistemi!`
           });
-          let uyari = new Discord.RichEmbed()
+          let uyari = new Discord.MessageEmbed()
             .setColor("BLACK")
             .setTitle("revers Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yaptığı İçin Sunucudan Atıldı! (3/3)`
             )
-            .setFooter(client.user.username, client.user.avatarURL)
+            .setFooter(client.user.username, client.user.avatarURL())
             .setTimestamp();
           message.channel.send(uyari);
         }
@@ -433,13 +433,13 @@ client.on("message", async message => {
             reason: `Revers Reklam-Engel Sistemi!`
           });
           db.delete(`reklamuyari_${message.author.id}`);
-          let uyari = new Discord.RichEmbed()
+          let uyari = new Discord.MessageEmbed()
             .setColor("BLACK")
             .setTitle("Revers Reklam Kick Sistemi")
             .setDescription(
               `<@${message.author.id}> Atıldıktan Sonra Tekrar Reklam Yaptığı İçin Sunucudan Yasaklandı!`
             )
-            .setFooter(client.user.username, client.user.avatarURL)
+            .setFooter(client.user.username, client.user.avatarURL())
             .setTimestamp();
           message.channel.send(uyari);
         }
@@ -462,7 +462,7 @@ client.on('channelCreate', async channel => {
                     .addField(`Kanal oluşturuldu`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\nID: ${channel.id}`)
                     .setTimestamp()
                     .setColor("Black")
-                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
+                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL())
     c.send(embed)
 });
 
@@ -473,7 +473,7 @@ client.on('channelDelete', async channel => {
                     .addField(`Kanal silindi`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\nID: ${channel.id}`)
                     .setTimestamp()
                     .setColor("Black")
-                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
+                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL())
 
     c.send(embed)
 });
@@ -485,7 +485,7 @@ client.on('channelDelete', async channel => {
                     .addField(`Kanal İsmi değiştirildi`, ` Yeni İsmi: \`${channel.name}\`\nID: ${channel.id}`)
                     .setTimestamp()
                     .setColor("Black")
-                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
+                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL())
     c.send(embed)
 });
 
@@ -497,7 +497,7 @@ client.on('emojiCreate', emoji => {
                     .addField(`Emoji oluşturuldu`, ` İsmi: \`${emoji.name}\`\n GIF?: **${emoji.animated}**\nID: ${emoji.id}`)
                     .setTimestamp()
                     .setColor("Black")
-                    .setFooter(`${emoji.client.user.username}#${emoji.client.user.discriminator}`, emoji.client.user.avatarURL)
+                    .setFooter(`${emoji.client.user.username}#${emoji.client.user.discriminator}`, emoji.client.user.avatarURL())
 
     c.send(embed)
     });
@@ -521,7 +521,7 @@ client.on('emojiUpdate', (oldEmoji, newEmoji) => {
                     .addField(`Emoji güncellendi`, ` Eski ismi: \`${oldEmoji.name}\`\n Yeni ismi: \`${newEmoji.name}\`\nID: ${oldEmoji.id}`)
                     .setTimestamp()
                     .setColor("Black")
-                    .setFooter(`${newEmoji.client.user.username}#${newEmoji.client.user.discriminator}`, newEmoji.client.user.avatarURL)
+                    .setFooter(`${newEmoji.client.user.username}#${newEmoji.client.user.discriminator}`, newEmoji.client.user.avatarURL())
 
     c.send(embed)
     });
@@ -533,11 +533,11 @@ client.on('guildBanAdd', async (guild, user) => {
   const entry = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'}).then(audit => audit.entries.first())
 
     let embed = new Discord.MessageEmbed()
-                    .setAuthor(`${user.username}#${user.discriminator}`, user.avatarURL)
+                    .setAuthor(`${user.username}#${user.discriminator}`, user.avatarURL())
                     .addField(`Kullanıcı banlandı`, ` İsmi: \`${user.username}\`\n ID: **${user.id}**\n Sebep: **${entry.reason || 'Belirtmedi'}**\n Banlayan: **${entry.executor.username}#${entry.executor.discriminator}**`)
                     .setTimestamp()
                     .setColor("Black")
-                    .setFooter(`${entry.executor.username}#${entry.executor.discriminator} tarafından`, entry.executor.avatarURL)
+                    .setFooter(`${entry.executor.username}#${entry.executor.discriminator} tarafından`, entry.executor.avatarURL())
 
     channel.send(embed)
 });
@@ -549,11 +549,11 @@ client.on('guildBanRemove', async (guild, user) => {
   const entry = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'}).then(audit => audit.entries.first())
 
     let embed = new Discord.MessageEmbed()
-                    .setAuthor(`${user.username}#${user.discriminator}`, user.avatarURL)
+                    .setAuthor(`${user.username}#${user.discriminator}`, user.avatarURL())
                     .addField(`Kullanıcının banı açıldı`, ` İsmi: \`${user.username}\`\n ID: **${user.id}**\n Banı Kaldıran: **${entry.executor.username}#${entry.executor.discriminator}**`)
                     .setTimestamp()
                     .setColor("Black")
-                    .setFooter(`${entry.executor.username}#${entry.executor.discriminator} tarafından`, entry.executor.avatarURL)
+                    .setFooter(`${entry.executor.username}#${entry.executor.discriminator} tarafından`, entry.executor.avatarURL())
 
     channel.send(embed)
 });
@@ -564,13 +564,13 @@ client.on('messageDelete', async message => {
   if (!channel) return;
   
     let embed = new Discord.MessageEmbed()
-                    .setAuthor(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)
+                    .setAuthor(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL())
                     .setTitle("Mesaj silindi")                
                     .addField(`Silinen mesaj : ${message.content}`,`Kanal: ${message.channel.name}`)
                   //  .addField(`Kanal:`,`${message.channel.name}`)
                     .setTimestamp()
                     .setColor("Black")
-                    .setFooter(`${message.client.user.username}#${message.client.user.discriminator}`, message.client.user.avatarURL)
+                    .setFooter(`${message.client.user.username}#${message.client.user.discriminator}`, message.client.user.avatarURL())
 
     channel.send(embed)
 });
@@ -589,7 +589,7 @@ client.on('messageUpdate', async(oldMessage, newMessage) => {
     .addField("Kanal : ",`${oldMessage.channel.name}`)
     .setTimestamp()
     .setColor("Black")
-    .setFooter(`${oldMessage.client.user.username}#${oldMessage.client.user.discriminator}`,`${oldMessage.client.user.avatarURL}`)
+    .setFooter(`${oldMessage.client.user.username}#${oldMessage.client.user.discriminator}`,`${oldMessage.client.user.avatarURL()}`)
 
     channel.send(embed)
 });
@@ -604,7 +604,7 @@ client.on('roleCreate', async (role) => {
 .setTimestamp()
 .setColor("Black")
 .addField("Rol renk kodu : ",`${role.hexColor}`)
-.setFooter(`${role.client.user.username}#${role.client.user.discriminator}`, role.client.user.avatarURL)
+.setFooter(`${role.client.user.username}#${role.client.user.discriminator}`, role.client.user.avatarURL())
 
     channel.send(embed)
 });
@@ -619,7 +619,7 @@ client.on('roleDelete', async (role) => {
 .setTimestamp()
 .setColor("Black")
     .addField("Rol renk kodu : ",`${role.hexColor}`)
-.setFooter(`${role.client.user.username}#${role.client.user.discriminator}`, role.client.user.avatarURL)
+.setFooter(`${role.client.user.username}#${role.client.user.discriminator}`, role.client.user.avatarURL())
 
     channel.send(embed)
 })

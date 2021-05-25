@@ -1,7 +1,7 @@
 {
   "name": "hello-express",
   "version": "0.0.1",
-  "description": "SAFE CODE V12 ALT YAPI",
+  "description": "Revers",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
