@@ -1,4 +1,7 @@
 const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
+
+var prefix = ayarlar.prefix;
 
 exports.run = async (client, message, args) => {
 const emoji1 = client.emojis.cache.get("722641897419571260");
