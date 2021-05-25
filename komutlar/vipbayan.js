@@ -30,6 +30,7 @@ let yas = args[2]
   if (!yas) return message.channel.send(new Discord.MessageEmbed()                                          
   .addField("Hata",`${prefix}bayan <Kullanıcı-Adı> <Isim> <Yaş> Şeklinde Olmalıdır.`)
   .setColor("RANDOM"));
+  if(isNaN(args[2])) return message.reply("**Lütfen geçerli bir sayı giriniz.**")
   if(yas<15) return message.channel.send("**En az 15 yaşını doldurmuş olması gerekli.**")
   if(yas>50) return message.channel.send("**Emekli olcak yaştasın ne işin var burda orospu evladı.**")
 
