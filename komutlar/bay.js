@@ -20,17 +20,17 @@ let yas = args[2]
   return message.channel.send(`Bu komutu kullanabilmek için \`Kayıt\` yetkisine sahip olmasınız.`);
   let member = message.mentions.members.first()
   let isim = args.slice(1).join(" ")
-  if (!member) return message.channel.send(new Discord.MessageEmbed()                                          
-  .addField("Hata",`${prefix}erkek <Kullanıcı-Adı> <Isim> <Yaş> Şeklinde Olmalıdır`)
+  if (!member) return message.channel.send(new Discord.MessageEmbed()    
+  .addField("Hata",`${prefix}erkek <Kullanıcı-Adı> <Isim> <Yaş> Şeklinde Olmalıdır.`)
   .setColor("RANDOM"));
   if (!isim) return message.channel.send(new Discord.MessageEmbed()                                          
-  .addField("Hata",`${prefix}erkek <Kullanıcı-Adı> <Isim> <Yaş> Şeklinde Olmalıdır`)
+  .addField("Hata",`${prefix}erkek <Kullanıcı-Adı> <Isim> <Yaş> Şeklinde Olmalıdır.`)
   .setColor("RANDOM"));
   if (!yas) return message.channel.send(new Discord.MessageEmbed()                                          
-  .addField("Hata",`${prefix}erkek <Kullanıcı-Adı> <Isim> <Yaş> Şeklinde Olmalıdır`)
+  .addField("Hata",`${prefix}erkek <Kullanıcı-Adı> <Isim> <Yaş> Şeklinde Olmalıdır.`)
   .setColor("RANDOM"));
-  if(yas<15) return message.reply("**En az 15 yaşını doldurmuş olması gerekli.**")
-  if(yas>50) return message.reply("**Emekli olcak yaştasın ne işin var burda orospu evladı.**")
+  if(yas<15) return message.channel.send("**En az 15 yaşını doldurmuş olması gerekli.**")
+  if(yas>50) return message.channel.send("**Emekli olcak yaştasın ne işin var burda orospu evladı.**")
 
   setTimeout(function(){
   member.setNickname(`⊀ ${isimön} | ${yas} `)
