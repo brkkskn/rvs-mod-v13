@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
     message.guild.roles.get(args[0]) ||
     message.guild.roles.find(rol => rol.name === args[0]);
   if (!rol)
-    return message.channel.sendd(
+    return message.channel.send(
       "❌ **Herkese Rol Verebilmem İçin Bir Rol Etiketlemelisin!**"
     );
 
