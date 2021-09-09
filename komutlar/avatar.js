@@ -14,20 +14,20 @@ if (mention != null || mention != undefined) {
   if (mention.username.endsWith("s")) {
     name = mention.username + "' ";
   }
-  const avatarEmbedOther = new Discord.MessageEmbed()
+  const avatarEmbedOther = new Discord.RichEmbed()
   .setAuthor(mention.username, mention.avatarURLavatarURL)
   .setColor(0x3)
-  .setImage(mention.avatarURL())
- .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL())
-  message.channel.send(avatarEmbedOther);
+  .setImage(mention.avatarURL)
+ .setFooter(`${message.author.tag} tarafından istendi.`, message.author.avatarURL)
+  message.channel.sendEmbed(avatarEmbedOther);
   return;
 } else {
-  const avatarEmbedYou = new Discord.MessageEmbed()
-  .setAuthor(sender, message.author.avatarURL())
+  const avatarEmbedYou = new Discord.RichEmbed()
+  .setAuthor(sender, message.author.avatarURL)
   .setColor(0x3)
-  .setImage(message.author.avatarURL())
-  .setFooter(`🕊 Developed by Josef`, message.author.avatarURL())
-  message.channel.send(avatarEmbedYou);
+  .setImage(message.author.avatarURL)
+  .setFooter(`🕊 Developed by Josef`, message.author.avatarURL)
+  message.channel.sendEmbed(avatarEmbedYou);
   return;
 }
 message.channel.sendMessage("Bi hata oldu galiba?");

@@ -1,17 +1,10 @@
 const request = require('node-superfetch');
 const crypto = require('crypto');
-const { IMGUR_KEY } = process.env;
-const yes = ['evet'];
-const no = ['hayır']
+const yes = ['evet', 'kabul ediyorum', 'ediyorum', 'evt'];
+const no = ['hayır', 'kabul etmiyorum', 'etmiyorum', 'hyr'];
 
-const deleteCommandMessages = function (msg, client) { 
-	if (msg.deletable && client.provider.get('global', 'deletecommandmessages', false)) {
-	  return msg.delete();
-	}
-  };
-
-class Util {
-	static wait(ms) {
+class ek {
+	static delay(ms) {
 		return new Promise(resolve => setTimeout(resolve, ms));
 	}
 
@@ -84,7 +77,7 @@ class Util {
 	}
 
 	static tomorrow(timeZone) {
-		const today = Util.today(timeZone);
+		const today = ek.today(timeZone);
 		today.setDate(today.getDate() + 1);
 		return today;
 	}
@@ -122,4 +115,4 @@ class Util {
 	}
 }
 
-module.exports = Util;
+module.exports = ek;

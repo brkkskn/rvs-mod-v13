@@ -1,72 +1,60 @@
 const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json');
-
-var prefix = ayarlar.prefix;
 
 exports.run = async (client, message, args) => {
-const emoji1 = client.emojis.cache.get("722641897419571260");
-const kayityetkili = message.guild.roles.cache.find(r => r.id === "818149322700750879") // Kayıt Yetkili
-const verbuse = message.guild.roles.cache.find(r => r.id === "818149328270524426") //VERİLECEK ROL ID
-const verbusem = message.guild.roles.cache.find(r => r.id === "825176337408065536") //VERİLECEK ROL ID
-const albuse = message.guild.roles.cache.find(r => r.id === "818149352001896491") //ALINACAK ROL ID
-//let albusem = '740959861520597073' //ALINACAK ROL ID l Kullanmicaksanız silin
-let isimön = args[1] //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
-let yas = args[2] 
-//if (!isim) return message.channel.send(`*İsmini girmelisin!**`)
+
+let kayityetkili = '818149322700750879' //KAYIT YETKİLİSİ ID
+let verbuse = '818149328270524426' //VERİLECEK ROL ID
+let verbusem = '825176337408065536' //VERİLECEK ROL ID
+let albuse = '818149352001896491' //ALINACAK ROL ID
+//let albusem = '703451025939497030' //ALINACAK ROL ID l Kullanmicaksanız silin kötü gözükür .
+let isimön = args [1] //DEĞİŞTİRİLECEK İSMİN ÖNÜNE GELEN
+let yas = args [2]
+//let isimson = '✝' //DEĞİŞTİRİLECEK İSMİN SONUNA GELEN
+
 //TİK İSMİNDE BİR EMOJİNİZ OLMASI LAZIM (Hareketli Olsa Daha Güzel Gözükür)
 
- // if(!message.member.roles.has(kayityetkili)) 
+  if(!message.member.roles.has(kayityetkili)) 
   if(!message.member.hasPermission("ADMINISTRATOR"))
   return message.channel.send(`Bu komutu kullanabilmek için \`Kayıt\` yetkisine sahip olmasınız.`);
   let member = message.mentions.members.first()
   let isim = args.slice(1).join(" ")
-  if (!member) return message.channel.send(new Discord.MessageEmbed()    
-  .addField("Hata",`${prefix}bayan <Kullanıcı-Adı> <Isim> <Yaş> Şeklinde Olmalıdır.`)
-  .setColor("RANDOM"));
-  if (!isim) return message.channel.send(new Discord.MessageEmbed()                                          
-  .addField("Hata",`${prefix}bayan <Kullanıcı-Adı> <Isim> <Yaş> Şeklinde Olmalıdır.`)
-  .setColor("RANDOM"));
-  if (!yas) return message.channel.send(new Discord.MessageEmbed()                                          
-  .addField("Hata",`${prefix}bayan <Kullanıcı-Adı> <Isim> <Yaş> Şeklinde Olmalıdır.`)
-  .setColor("RANDOM"));
-  if(isNaN(args[2])) return message.reply("**Lütfen geçerli bir sayı giriniz.**")
-  if(yas<15) return message.channel.send("**En az 15 yaşını doldurmuş olması gerekli.**")
-  if(yas>50) return message.channel.send("**Emekli olcak yaştasın ne işin var burda orospu evladı.**")
-
+  if (!member) return message.channel.send('**.erkek <KullanıcıAdı> <Isim> <Yaş> Şeklinde Olmalıdır!**')
+  if (!isim) return message.channel.send('**.erkek <KullanıcıAdı> <Isim> <Yaş> Şeklinde Olmalıdır!**')
+  if (!yas) return message.channel.send('**.erkek <KullanıcıAdı> <Isim> <Yaş> Şeklinde Olmalıdır!**')
   setTimeout(function(){
-  member.setNickname(`⊀ ${isimön} | ${yas} `)
+  member.setNickname(`⊀ ${isimön} | ${yas}`)
   },2000)
   setTimeout(function(){
-  member.roles.add(verbuse)
-  member.roles.add(verbusem)
+  member.addRole(verbuse)
+  member.addRole(verbusem)
   },3000)
   setTimeout(function(){
-  member.roles.remove(albuse)
-  //member.addRole(albusem)
+  member.removeRole(albuse)
+
   },4000)
- //const sonsuz = client.emojis.get (`741987392856260678`) 
-// const emoji = client.emojis.find(emoji => emoji.name === "eyes");
- let embed = new Discord.MessageEmbed()  
+
+ const sonsuz = client.emojis.get (`722641897419571260`)   
+ const emoji = client.emojis.find(emoji => emoji.name === "tik");
+ let embed = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .setThumbnail(member.user.avatarURL())
-  .setDescription(`${emoji1} ‍  ‍  ‍ **Revers Kayıt Sistemi** ‍  ‍  ‍ ${emoji1} ‍ 
+  .setDescription(`${sonsuz} ‍  ‍  ‍ **Revers Kayıt Sistemi** ‍  ‍  ‍ ${sonsuz}
 
-**Kayıt edilen kullanıcı :** ${isimön} ${yas}      
+**Kayıt edilen kullanıcı :** ${isimön} ${yas}
 
-**Kayıt işleminde verilen rol :** ${verbuse} **-** ${verbusem}
+**Kayıt işleminde verilen rol :** <@&${verbuse}> **-** <@&${verbusem}>
 
-**Kayıt işleminde alınan rol :** ${albuse}
+**Kayıt işleminde alınan rol :** <@&${albuse}>
 `)
-  .setFooter(`Komutu kullanan yetkili : ${message.author.username}`)
-  .setImage("https://cdn.discordapp.com/attachments/522576410083328010/838842688098926602/scsd.gif")
+  .setFooter(`Komutu kullanan yetkili : ${message.author.username}`) 
+  .setImage("https://37.media.tumblr.com/f1d867e7b7771f57ccf325a13630ce29/tumblr_n3zeepZMFm1ttv14wo1_r1_250.gif")
 message.channel.send(embed)
-//message.react(emoji)
+message.react(emoji)
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ['kiz','kız', 'bayan', 'k'],
+  aliases: ['kiz','Kız', 'bayan'],
   permLevel: 0
 }
 exports.help = {

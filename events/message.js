@@ -5,7 +5,7 @@ module.exports = message => {
     return;
   }
   talkedRecently.add(message.author.id);
-    setTimeout(() => {
+	setTimeout(() => {
     talkedRecently.delete(message.author.id);
   }, 2500);
   let client = message.client;
@@ -26,4 +26,3 @@ module.exports = message => {
   }
 
 };
-

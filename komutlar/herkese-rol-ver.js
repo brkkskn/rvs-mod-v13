@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 exports.run = async (client, message, args) => {
-  var bot = "741207517497131058";
+  var bot = "734192066338488370";
   if (!message.member.hasPermission("MANAGE_ROLES"))
     return message.channel.send(
       "❌ **Bu Komutu Kullanabilmek İçin `Rolleri Yönet` Yetkisine Sahip Olmalısın!**"
@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
     message.guild.roles.get(args[0]) ||
     message.guild.roles.find(rol => rol.name === args[0]);
   if (!rol)
-    return message.channel.send(
+    return message.channel.sendd(
       "❌ **Herkese Rol Verebilmem İçin Bir Rol Etiketlemelisin!**"
     );
 
