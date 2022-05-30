@@ -36,7 +36,7 @@
     "js-robloxapi": "^1.0.6",
     "wio.db": "^3.0.5",
     "proton-io": "^0.0.5",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^3.2.3"
   },
   "engines": {
     "node": "12.x"
